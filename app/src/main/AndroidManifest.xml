@@ -21,7 +21,7 @@
         <activity android:name=".CreateCharacter" />
         <activity android:name=".Town" />
         <activity android:name=".RegionPicker" />
-        <activity android:name=".ForestQuests"></activity>
+        <activity android:name=".ForestQuests" />
     </application>
 
 </manifest>
