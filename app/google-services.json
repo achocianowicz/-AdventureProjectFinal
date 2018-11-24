@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "653973226862",
+    "firebase_url": "https://ou-csi5230-final-project-fb693.firebaseio.com",
+    "project_id": "ou-csi5230-final-project-fb693",
+    "storage_bucket": "ou-csi5230-final-project-fb693.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653973226862:android:508bc94dedbdca1e",
+        "android_client_info": {
+          "package_name": "com.example.joydr.adventureprojectfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653973226862-18m4vg4ggc6niqbgm154qoblsj8evofb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.joydr.adventureprojectfinal",
+            "certificate_hash": "ae14c344d03378144bed32a62789172f5c43425f"
+          }
+        },
+        {
+          "client_id": "653973226862-o5n55fs1pbf8srfoek1n5l08q9ip43v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzlNd118Q5nIqVblG__9PCxWfolBbo73M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653973226862-o5n55fs1pbf8srfoek1n5l08q9ip43v3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
