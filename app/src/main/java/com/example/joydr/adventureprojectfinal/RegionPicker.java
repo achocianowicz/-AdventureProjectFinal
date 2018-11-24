@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class RegionPicker extends AppCompatActivity {
+public class RegionPicker extends AppCompatActivity
+{
     Button forestButton= null, mountianButton= null, pliansButtion = null, swampButton = null, coastalButton = null;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_region_picker);
         forestButton = findViewById(R.id.forestButton);
