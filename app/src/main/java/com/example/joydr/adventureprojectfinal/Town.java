@@ -34,7 +34,10 @@ public class Town extends AppCompatActivity {
         charStatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // use EXp to upgrade char
+                // CharacterStats
+                Intent intent = new Intent(v.getContext(), CharacterStats.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
             }
         });
 
