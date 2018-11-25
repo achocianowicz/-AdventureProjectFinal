@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 public class CharacterStats extends AppCompatActivity {
     TextView charName_CharStats, charLevel_CharStats,charCurrentEXP_CharStats,charEXPToNextLevel_CharStats, STR_CharStats,
-            INTELL_CharStats,DEX_CharStats, attack_CharStats, health_CharStats,intell_CharStats, magic_CharStats, speed_CharStats,dodge_CharStats;
+            INTELL_CharStats,DEX_CharStats, attack_CharStats, health_CharStats,intell_CharStats, magic_CharStats, speed_CharStats,dodge_CharStats,
+    currentWeapon_CharStats, currentWeaponName_CharStats, currentWeaponAttack_CharStats, currentWeaponSpeed_CharStats,
+    hpCount_CharStats, mpCount_CharStats;
+
     Button addAttackButton_CharStats, addHealthButton_CharStats, addIntellButton_CharStats,addMagicButton_CharStats,
             addSpeedButton_CharStats,addDodgeButton_CharStats;
 
@@ -45,12 +48,23 @@ public class CharacterStats extends AppCompatActivity {
 
         addSpeedButton_CharStats = findViewById(R.id.addSpeedButton_CharStats);
         addDodgeButton_CharStats = findViewById(R.id.addDodgeButton_CharStats);
-        //charName_CharStats = findViewById(R.id.charName_CharStats);
+
+      //  currentWeapon_CharStats, currentWeaponName_CharStats, currentWeaponAttack_CharStats, currentWeaponSpeed_CharStats
+        currentWeapon_CharStats = findViewById(R.id.currentWeapon_CharStats);
+        currentWeaponName_CharStats = findViewById(R.id.currentWeaponName_CharStats);
+        currentWeaponAttack_CharStats = findViewById(R.id.currentWeaponAttack_CharStats);
+        currentWeaponSpeed_CharStats = findViewById(R.id.currentWeaponSpeed_CharStats);
+
+        hpCount_CharStats = findViewById(R.id.hpCount_CharStats);
+        mpCount_CharStats = findViewById(R.id.mpCount_CharStats);
 
         charName_CharStats.setText(Singleton.getInstance().getCharName());
         charLevel_CharStats.setText("Level: " + Singleton.getInstance().getCharLevel());
         charCurrentEXP_CharStats.setText("Current Exp:" + Singleton.getInstance().getCharCurrentEXP());
         charEXPToNextLevel_CharStats.setText("EXP TNL: " +Singleton.getInstance().getCharEXPToNextLevel());
+//#TODO in singleton
+        hpCount_CharStats.setText("Health potion count: " + Singleton.getInstance().getHpCount());
+        mpCount_CharStats.setText("Magic potion count: " + Singleton.getInstance().getMpCount());
 
         STR_CharStats.setText("STR: " +Singleton.getInstance().getSTRPoint());
         INTELL_CharStats.setText("INTELL: " + Singleton.getInstance().getINTELLPoint());
@@ -63,6 +77,10 @@ public class CharacterStats extends AppCompatActivity {
         speed_CharStats.setText("Speed: " + Singleton.getInstance().getCharSpeed());
         dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
 
+        currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
+        currentWeaponName_CharStats.setText( "Name: " + Singleton.getInstance().getCharWeaponName());
+        currentWeaponAttack_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharWeaponAttack());
+        currentWeaponSpeed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharWeaponSpeed());
         addAttackButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,6 +218,18 @@ public class CharacterStats extends AppCompatActivity {
         });
 
 
+
+    }
+
+    @Override
+    protected void  onResume() {
+        super.onResume();
+        currentWeapon_CharStats = findViewById(R.id.currentWeapon_CharStats);
+        currentWeaponName_CharStats = findViewById(R.id.currentWeaponName_CharStats);
+        currentWeaponAttack_CharStats = findViewById(R.id.currentWeaponAttack_CharStats);
+        currentWeaponSpeed_CharStats = findViewById(R.id.currentWeaponSpeed_CharStats);
+        hpCount_CharStats.setText("Health potion count: " + Singleton.getInstance().getHpCount());
+        mpCount_CharStats.setText("Magic potion count: " + Singleton.getInstance().getMpCount());
 
     }
 }
