@@ -59,7 +59,7 @@ public class Town extends AppCompatActivity {
                 //#TODO Go to shop
                 Singleton.getInstance().setCharName(currentCharName.getText().toString());
 
-                Intent intent = new Intent(v.getContext(), RegionPicker.class);
+                Intent intent = new Intent(v.getContext(), Shop.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }

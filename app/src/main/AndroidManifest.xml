@@ -24,7 +24,8 @@
         <activity android:name=".ForestQuests" />
         <activity android:name=".CharacterStats" />
         <activity android:name=".Forest1FindTheChest" />
-        <activity android:name=".QuestReward"></activity>
+        <activity android:name=".QuestReward" />
+        <activity android:name=".Shop"></activity>
     </application>
 
 </manifest>

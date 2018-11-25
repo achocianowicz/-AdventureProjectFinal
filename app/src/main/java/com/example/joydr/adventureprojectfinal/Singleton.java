@@ -17,9 +17,18 @@ public class Singleton {
                 charSTR = "0", charDEX = "0",
                 charLevel = "1", charOverallEXP = "0", charCurrentEXP = "0", charEXPToNextLevel = "100", STRPoint ="0", INTELLPoint ="0", DEXPoint ="0" ;
     private String charAttack ="0", charHealth ="0", charINTELL = "0", charMagic = "0", charSpeed= "0", charDodge = "0", charCurrentMagic = "0", charBaseMagic = "0";
-
+            // char items
+            private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null;
+            private String hpCount = "0", mpCount = "0";
         // town
         private String dayCount = null;
+
+        //Shop
+
+        private String weapon1Name ="sword", weapon2Name ="axe", weapon3Name = "spear";
+        private String weapon1Attack =" 10", weapon2Attack =" 20", weapon3Attack =" 5";
+        private  String weapon1Speed = " 50", weapon2Speed = "80", weapon3Speed = " 20";
+        private String weapon1Cost = "100", weapon2Cost = "100", weapon3Cost = "100";
 
         //Quest rewards
         private  String questTitle = null;
@@ -277,5 +286,141 @@ public class Singleton {
 
     public void setDayCount(String dayCount) {
         this.dayCount = dayCount;
+    }
+
+    public String getCharWeaponName() {
+        return charWeaponName;
+    }
+
+    public void setCharWeaponName(String charWeaponName) {
+        this.charWeaponName = charWeaponName;
+    }
+
+    public String getCharWeaponAttack() {
+        return charWeaponAttack;
+    }
+
+    public void setCharWeaponAttack(String charWeaponAttack) {
+        this.charWeaponAttack = charWeaponAttack;
+    }
+
+    public String getCharWeaponSpeed() {
+        return charWeaponSpeed;
+    }
+
+    public void setCharWeaponSpeed(String charWeaponSpeed) {
+        this.charWeaponSpeed = charWeaponSpeed;
+    }
+
+    public String getWeapon1Name() {
+        return weapon1Name;
+    }
+
+    public void setWeapon1Name(String weapon1Name) {
+        this.weapon1Name = weapon1Name;
+    }
+
+    public String getWeapon2Name() {
+        return weapon2Name;
+    }
+
+    public void setWeapon2Name(String weapon2Name) {
+        this.weapon2Name = weapon2Name;
+    }
+
+    public String getWeapon3Name() {
+        return weapon3Name;
+    }
+
+    public void setWeapon3Name(String weapon3Name) {
+        this.weapon3Name = weapon3Name;
+    }
+
+    public String getWeapon1Attack() {
+        return weapon1Attack;
+    }
+
+    public void setWeapon1Attack(String weapon1Attack) {
+        this.weapon1Attack = weapon1Attack;
+    }
+
+    public String getWeapon2Attack() {
+        return weapon2Attack;
+    }
+
+    public void setWeapon2Attack(String weapon2Attack) {
+        this.weapon2Attack = weapon2Attack;
+    }
+
+    public String getWeapon3Attack() {
+        return weapon3Attack;
+    }
+
+    public void setWeapon3Attack(String weapon3Attack) {
+        this.weapon3Attack = weapon3Attack;
+    }
+
+    public String getWeapon1Speed() {
+        return weapon1Speed;
+    }
+
+    public void setWeapon1Speed(String weapon1Speed) {
+        this.weapon1Speed = weapon1Speed;
+    }
+
+    public String getWeapon2Speed() {
+        return weapon2Speed;
+    }
+
+    public void setWeapon2Speed(String weapon2Speed) {
+        this.weapon2Speed = weapon2Speed;
+    }
+
+    public String getWeapon3Speed() {
+        return weapon3Speed;
+    }
+
+    public void setWeapon3Speed(String weapon3Speed) {
+        this.weapon3Speed = weapon3Speed;
+    }
+
+    public String getWeapon1Cost() {
+        return weapon1Cost;
+    }
+
+    public void setWeapon1Cost(String weapon1Cost) {
+        this.weapon1Cost = weapon1Cost;
+    }
+
+    public String getWeapon2Cost() {
+        return weapon2Cost;
+    }
+
+    public void setWeapon2Cost(String weapon2Cost) {
+        this.weapon2Cost = weapon2Cost;
+    }
+
+    public String getWeapon3Cost() {
+        return weapon3Cost;
+    }
+
+    public void setWeapon3Cost(String weapon3Cost) {
+        this.weapon3Cost = weapon3Cost;
+    }
+
+    public String getHpCount() {
+        return hpCount;
+    }
+
+    public void setHpCount(String hpCount) {
+        this.hpCount = hpCount;
+    }
+
+    public String getMpCount() {
+        return mpCount;
+    }
+
+    public void setMpCount(String mpCount) {
+        this.mpCount = mpCount;
     }
 }
