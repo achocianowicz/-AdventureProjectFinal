@@ -84,13 +84,14 @@ public class CharacterStats extends AppCompatActivity {
         addAttackButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double strPoint = Double.parseDouble(Singleton.getInstance().getSTRPoint());
+                int strPoint = Integer.parseInt(Singleton.getInstance().getSTRPoint());
                 if(strPoint >=1){
                     --strPoint;
                     String nSTRPoint = String.valueOf(strPoint);
                     Singleton.getInstance().setSTRPoint(nSTRPoint);
+                    STR_CharStats.setText("STR: " + Singleton.getInstance().getSTRPoint());
                    String cAttack = Singleton.getInstance().getCharAttack();
-                   double nAttack = Double.parseDouble(cAttack);
+                   int nAttack = Integer.parseInt(cAttack);
                    nAttack++;
                    String setAttack = String.valueOf(nAttack);
                     Singleton.getInstance().setCharAttack(setAttack);
@@ -103,13 +104,14 @@ public class CharacterStats extends AppCompatActivity {
         addHealthButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double strPoint = Double.parseDouble(Singleton.getInstance().getSTRPoint());
+                int strPoint = Integer.parseInt(Singleton.getInstance().getSTRPoint());
                 if(strPoint >=1){
                     --strPoint;
                     String nSTRPoint = String.valueOf(strPoint);
                     Singleton.getInstance().setSTRPoint(nSTRPoint);
+                    STR_CharStats.setText("STR: " + Singleton.getInstance().getSTRPoint());
                     String cHealth = Singleton.getInstance().getCharHealth();
-                    double nHealth = Double.parseDouble(cHealth);
+                    int nHealth = Integer.parseInt(cHealth);
                     nHealth++;
                     String setHealth = String.valueOf(nHealth);
                     Singleton.getInstance().setCharHealth(setHealth);
@@ -129,13 +131,14 @@ public class CharacterStats extends AppCompatActivity {
         addIntellButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double intellpoint = Double.parseDouble(Singleton.getInstance().getINTELLPoint());
+                int intellpoint = Integer.parseInt(Singleton.getInstance().getINTELLPoint());
                 if(intellpoint >=1){
                     --intellpoint;
                     String nINTELLPoint = String.valueOf(intellpoint);
                     Singleton.getInstance().setINTELLPoint(nINTELLPoint);
+                    INTELL_CharStats.setText("INTELL: " +Singleton.getInstance().getINTELLPoint());
                     String cIntell = Singleton.getInstance().getCharINTELL();
-                    double nIntell= Double.parseDouble(cIntell);
+                    int nIntell= Integer.parseInt(cIntell);
                     nIntell++;
                     String setIntell = String.valueOf(nIntell);
                     Singleton.getInstance().setCharINTELL(setIntell);
@@ -150,13 +153,14 @@ public class CharacterStats extends AppCompatActivity {
         addMagicButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double intellpoint = Double.parseDouble(Singleton.getInstance().getINTELLPoint());
+                int intellpoint = Integer.parseInt(Singleton.getInstance().getINTELLPoint());
                 if(intellpoint >=1){
                     --intellpoint;
                     String nINTELLPoint = String.valueOf(intellpoint);
                     Singleton.getInstance().setINTELLPoint(nINTELLPoint);
                     String cMagic = Singleton.getInstance().getCharMagic();
-                    double nMagic= Double.parseDouble(cMagic);
+                    INTELL_CharStats.setText("INTELL: " + Singleton.getInstance().getINTELLPoint());
+                    int nMagic= Integer.parseInt(cMagic);
                     nMagic++;
                     String setMagic = String.valueOf(nMagic);
                     Singleton.getInstance().setCharMagic(setMagic);
@@ -167,7 +171,7 @@ public class CharacterStats extends AppCompatActivity {
                     String setbaseMP = String.valueOf(nbaseMP);
                     Singleton.getInstance().setCharBaseMagic(setbaseMP);
 
-                    magic_CharStats.setText("Magic: " + Singleton.getInstance().getCharINTELL());
+                    magic_CharStats.setText("Magic: " + Singleton.getInstance().getCharMagic());
 
                 }
 
@@ -177,13 +181,14 @@ public class CharacterStats extends AppCompatActivity {
         addSpeedButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double dexpoint = Double.parseDouble(Singleton.getInstance().getDEXPoint());
+                int dexpoint = Integer.parseInt(Singleton.getInstance().getDEXPoint());
                 if(dexpoint >=1){
                     --dexpoint;
                     String nDEXPoint = String.valueOf(dexpoint);
                     Singleton.getInstance().setDEXPoint(nDEXPoint);
+                    DEX_CharStats.setText("DEX : " +Singleton.getInstance().getDEXPoint());
                     String cSpeed = Singleton.getInstance().getCharSpeed();
-                    double nSpeed= Double.parseDouble(cSpeed);
+                    int nSpeed= Integer.parseInt(cSpeed);
                     nSpeed++;
                     String setSpeed = String.valueOf(nSpeed);
                     Singleton.getInstance().setCharSpeed(setSpeed);
@@ -198,18 +203,19 @@ public class CharacterStats extends AppCompatActivity {
         addDodgeButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double dexpoint = Double.parseDouble(Singleton.getInstance().getDEXPoint());
+                int dexpoint = Integer.parseInt(Singleton.getInstance().getDEXPoint());
                 if(dexpoint >=1){
                     --dexpoint;
                     String nDEXPoint = String.valueOf(dexpoint);
                     Singleton.getInstance().setDEXPoint(nDEXPoint);
+                    DEX_CharStats.setText("Dex" +Singleton.getInstance().getDEXPoint());
                     String cDodge = Singleton.getInstance().getCharDodge();
-                    double nDodge= Double.parseDouble(cDodge);
+                    int nDodge= Integer.parseInt(cDodge);
                     nDodge++;
                     String setDodge = String.valueOf(nDodge);
                     Singleton.getInstance().setCharDodge(setDodge);
 
-                    speed_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
+                    dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
 
                 }
 
@@ -230,6 +236,17 @@ public class CharacterStats extends AppCompatActivity {
         currentWeaponSpeed_CharStats = findViewById(R.id.currentWeaponSpeed_CharStats);
         hpCount_CharStats.setText("Health potion count: " + Singleton.getInstance().getHpCount());
         mpCount_CharStats.setText("Magic potion count: " + Singleton.getInstance().getMpCount());
+
+        STR_CharStats.setText("STR: " +Singleton.getInstance().getSTRPoint());
+        INTELL_CharStats.setText("INTELL: " + Singleton.getInstance().getINTELLPoint());
+        DEX_CharStats.setText("DEX: " +Singleton.getInstance().getDEXPoint());
+
+        attack_CharStats.setText("Attack: " + Singleton.getInstance().getCharAttack());
+        health_CharStats.setText("Health: " + Singleton.getInstance().getCharHealth());
+        intell_CharStats.setText("Intell: " + Singleton.getInstance().getCharINTELL());
+        magic_CharStats.setText("Magic: " + Singleton.getInstance().getCharMagic());
+        speed_CharStats.setText("Speed: " + Singleton.getInstance().getCharSpeed());
+        dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
 
     }
 }

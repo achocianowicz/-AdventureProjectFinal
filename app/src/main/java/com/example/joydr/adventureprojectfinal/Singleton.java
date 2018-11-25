@@ -34,6 +34,10 @@ public class Singleton {
         private  String questTitle = null;
         private int expReward = -1, goldReward = -1;
 
+        // Does Char go up level?
+
+        private int expM = 2, expToNextLevel = 100;
+
 
         // private constructor restricted to this class itself
         private Singleton() {
@@ -422,5 +426,21 @@ public class Singleton {
 
     public void setMpCount(String mpCount) {
         this.mpCount = mpCount;
+    }
+
+    public int getExpM() {
+        return expM;
+    }
+
+    public void setExpM(int expM) {
+        this.expM = expM;
+    }
+
+    public int getExpToNextLevel() {
+        return expToNextLevel;
+    }
+
+    public void setExpToNextLevel(int expToNextLevel) {
+        this.expToNextLevel = expToNextLevel;
     }
 }
