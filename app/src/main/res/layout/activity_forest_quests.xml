@@ -7,7 +7,7 @@
     tools:context=".ForestQuests">
 
     <Button
-        android:id="@+id/forestAccpetButton1"
+        android:id="@+id/forestQuest1Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -20,17 +20,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.017" />
 
+    <Button
+        android:id="@+id/forestQuest2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Accept"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
+
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/ForestQuest1Text"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Fight Level 1 Bear"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/forestAccpetButton1"
-        app:layout_constraintEnd_toStartOf="@+id/forestAccpetButton1"
+        app:layout_constraintBottom_toBottomOf="@+id/forestQuest1Button"
+        app:layout_constraintEnd_toStartOf="@+id/forestQuest1Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/forestAccpetButton1" />
+        app:layout_constraintTop_toTopOf="@+id/forestQuest1Button" />
+
+    <TextView
+        android:id="@+id/ForestQuest2Text"
+        android:layout_width="239dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:text="Find the Chest"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/ForestQuest1Text"
+        app:layout_constraintStart_toStartOf="@+id/ForestQuest1Text"
+        app:layout_constraintTop_toBottomOf="@+id/ForestQuest1Text" />
 
 </android.support.constraint.ConstraintLayout>

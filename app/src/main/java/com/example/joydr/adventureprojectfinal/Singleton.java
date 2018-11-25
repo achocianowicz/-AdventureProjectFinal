@@ -21,6 +21,10 @@ public class Singleton {
         // town
         private String dayCount = null;
 
+        //Quest rewards
+        private  String questTitle = null;
+        private int expReward = -1, goldReward = -1;
+
 
         // private constructor restricted to this class itself
         private Singleton() {
@@ -241,6 +245,30 @@ public class Singleton {
 
     public void setCharBaseMagic(String charBaseMagic) {
         this.charBaseMagic = charBaseMagic;
+    }
+
+    public int getExpReward() {
+        return expReward;
+    }
+
+    public void setExpReward(int expReward) {
+        this.expReward = expReward;
+    }
+
+    public int getGoldReward() {
+        return goldReward;
+    }
+
+    public void setGoldReward(int goldReward) {
+        this.goldReward = goldReward;
+    }
+
+    public String getQuestTitle() {
+        return questTitle;
+    }
+
+    public void setQuestTitle(String questTitle) {
+        this.questTitle = questTitle;
     }
 
     public String getDayCount() {

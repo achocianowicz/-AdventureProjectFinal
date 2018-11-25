@@ -40,6 +40,11 @@ public class CheckLevel {
 
         }
 
+        else{
+
+            //same level
+        }
+
 
     }
 }

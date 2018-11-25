@@ -28,7 +28,7 @@ public class Town extends AppCompatActivity {
 
             String level = "Level: ", gold = "Gold: ";
         currentCharName.setText(Singleton.getInstance().getCharName());
-        currentCharLevel.setText(level +  Singleton.getInstance().getCharLevel());
+        currentCharLevel.setText("Level: " +  Singleton.getInstance().getCharLevel());
         currentUserGold.setText( "Gold: " + Singleton.getInstance().getUserGold());
 
         charStatsButton.setOnClickListener(new View.OnClickListener() {
@@ -75,5 +75,14 @@ public class Town extends AppCompatActivity {
                 v.getContext().startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void  onResume() {
+        super.onResume();
+        currentCharName.setText(Singleton.getInstance().getCharName());
+        currentCharLevel.setText("Level: " +  Singleton.getInstance().getCharLevel());
+        currentUserGold.setText( "Gold: " + Singleton.getInstance().getUserGold());
+
     }
 }

@@ -22,7 +22,9 @@
         <activity android:name=".Town" />
         <activity android:name=".RegionPicker" />
         <activity android:name=".ForestQuests" />
-        <activity android:name=".CharacterStats"></activity>
+        <activity android:name=".CharacterStats" />
+        <activity android:name=".Forest1FindTheChest" />
+        <activity android:name=".QuestReward"></activity>
     </application>
 
 </manifest>
