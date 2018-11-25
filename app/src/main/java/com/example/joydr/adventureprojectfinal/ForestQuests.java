@@ -7,15 +7,16 @@ import android.view.View;
 import android.widget.Button;
 
 public class ForestQuests extends AppCompatActivity {
-Button forestAccpetButton1 = null;
+Button forestQuest1Button = null, forestQuest2Button = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forest_quests);
 
-        forestAccpetButton1 = findViewById(R.id.forestAccpetButton1);
+        forestQuest1Button = findViewById(R.id.forestQuest1Button);
+        forestQuest2Button = findViewById(R.id.forestQuest2Button);
 
-        forestAccpetButton1.setOnClickListener(new View.OnClickListener() {
+        forestQuest1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 /*
@@ -23,6 +24,17 @@ Button forestAccpetButton1 = null;
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
                 */
+            }
+        });
+
+        forestQuest2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Singleton.getInstance().setQuestTitle("Find Chest in Forest 1");
+                Intent intent = new Intent(v.getContext(), Forest1FindTheChest.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
+
             }
         });
 
