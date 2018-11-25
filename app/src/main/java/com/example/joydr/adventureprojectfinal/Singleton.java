@@ -13,8 +13,10 @@ public class Singleton {
 
         // Current User's account chacarter info
 
-        private String charName = null, charClass = null, charBaseHP = null, charCurrentHP, charSTR, charINTELL, charDEX,
-                charLevel = "1", charEXP = null;
+        private String charName = null, charClass = null, charBaseHP = "100", charCurrentHP = "100",
+                charSTR = "0", charDEX = "0",
+                charLevel = "1", charOverallEXP = "0", charCurrentEXP = "0", charEXPToNextLevel = "100", STRPoint ="0", INTELLPoint ="0", DEXPoint ="0" ;
+    private String charAttack ="0", charHealth ="0", charINTELL = "0", charMagic = "0", charSpeed= "0", charDodge = "0", charCurrentMagic = "0", charBaseMagic = "0";
 
         // town
         private String dayCount = null;
@@ -137,12 +139,108 @@ public class Singleton {
         this.charLevel = charLevel;
     }
 
-    public String getCharEXP() {
-        return charEXP;
+    public String getCharOverallEXP() {
+        return charOverallEXP;
     }
 
-    public void setCharEXP(String charEXP) {
-        this.charEXP = charEXP;
+    public void setCharOverallEXP(String charOverallEXP) {
+        this.charOverallEXP = charOverallEXP;
+    }
+
+    public String getCharCurrentEXP() {
+        return charCurrentEXP;
+    }
+
+    public void setCharCurrentEXP(String charCurrentEXP) {
+        this.charCurrentEXP = charCurrentEXP;
+    }
+
+    public String getCharEXPToNextLevel() {
+        return charEXPToNextLevel;
+    }
+
+    public void setCharEXPToNextLevel(String charEXPToNextLevel) {
+        this.charEXPToNextLevel = charEXPToNextLevel;
+    }
+
+    public String getSTRPoint() {
+        return STRPoint;
+    }
+
+    public void setSTRPoint(String STRPoint) {
+        this.STRPoint = STRPoint;
+    }
+
+    public String getINTELLPoint() {
+        return INTELLPoint;
+    }
+
+    public void setINTELLPoint(String INTELLPoint) {
+        this.INTELLPoint = INTELLPoint;
+    }
+
+    public String getDEXPoint() {
+        return DEXPoint;
+    }
+
+    public void setDEXPoint(String DEXPoint) {
+        this.DEXPoint = DEXPoint;
+    }
+
+    public String getCharAttack() {
+        return charAttack;
+    }
+
+    public void setCharAttack(String charAttack) {
+        this.charAttack = charAttack;
+    }
+
+    public String getCharHealth() {
+        return charHealth;
+    }
+
+    public void setCharHealth(String charHealth) {
+        this.charHealth = charHealth;
+    }
+
+    public String getCharMagic() {
+        return charMagic;
+    }
+
+    public void setCharMagic(String charMagic) {
+        this.charMagic = charMagic;
+    }
+
+    public String getCharSpeed() {
+        return charSpeed;
+    }
+
+    public void setCharSpeed(String charSpeed) {
+        this.charSpeed = charSpeed;
+    }
+
+    public String getCharDodge() {
+        return charDodge;
+    }
+
+    public void setCharDodge(String charDodge) {
+        this.charDodge = charDodge;
+    }
+
+    public String getCharCurrentMagic() {
+        return charCurrentMagic;
+    }
+
+    public void setCharCurrentMagic(String charCurrentMagic) {
+        this.charCurrentMagic = charCurrentMagic;
+    }
+
+    public String getCharBaseMagic() {
+        return charBaseMagic;
+    }
+
+    public void setCharBaseMagic(String charBaseMagic) {
+        this.charBaseMagic = charBaseMagic;
     }
 
     public String getDayCount() {
