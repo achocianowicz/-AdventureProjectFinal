@@ -53,9 +53,13 @@ private String nEXP = null, nGold = null;
                int updatingGold = addingGold + Singleton.getInstance().getGoldReward();
                String setGold = String.valueOf(updatingGold);
                Singleton.getInstance().setUserGold(setGold);
+                Singleton.getInstance().setGoldReward(-1);
+                Singleton.getInstance().setExpReward(-1);
+                Singleton.getInstance().setQuestTitle("Error123");
                 Intent intent = new Intent(v.getContext(), Town.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
+                finish();
             }
         });
     }
