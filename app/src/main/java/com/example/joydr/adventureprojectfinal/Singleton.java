@@ -17,9 +17,12 @@ public class Singleton {
                 charSTR = "0", charDEX = "0",
                 charLevel = "1", charOverallEXP = "0", charCurrentEXP = "0", charEXPToNextLevel = "100", STRPoint ="0", INTELLPoint ="0", DEXPoint ="0" ;
     private String charAttack ="0", charHealth ="0", charINTELL = "0", charMagic = "0", charSpeed= "0", charDodge = "0", charCurrentMagic = "0", charBaseMagic = "0";
-            // char items
+
+    // char items
             private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null;
             private String hpCount = "0", mpCount = "0";
+            Attack charAttack1 = new Attack ("stab", 25, 40);
+            Attack charAttack2 = new Attack ("slice", 10, 90);
         // town
         private String dayCount = null;
 
@@ -37,6 +40,14 @@ public class Singleton {
         // Does Char go up level?
 
         private int expM = 2, expToNextLevel = 100;
+
+        //Forest 1 bear 1 combat
+        private String enemyName = "Bear";
+        private double enemyHP = 50, enemyMP = 0;
+        Attack bear1Attack1 = new Attack("Swipe", 10, 50);
+        Attack bear1Attack2 = new Attack("Bite", 30, 90);
+        private int forest1Bear1GoldReward = 100, forest1Bear1EXPReward = 100, bearLevel = 1;
+        Bear bear1 = new Bear();
 
 
         // private constructor restricted to this class itself
@@ -442,5 +453,88 @@ public class Singleton {
 
     public void setExpToNextLevel(int expToNextLevel) {
         this.expToNextLevel = expToNextLevel;
+    }
+
+    // bear
+
+
+    public String getEnemyName() {
+        return enemyName;
+    }
+
+    public void setEnemyName(String enemyName) {
+        this.enemyName = enemyName;
+    }
+
+    public double getEnemyHP() {
+        return enemyHP;
+    }
+
+    public void setEnemyHP(double enemyHP) {
+        this.enemyHP = enemyHP;
+    }
+
+    public double getEnemyMP() {
+        return enemyMP;
+    }
+
+    public void setEnemyMP(double enemyMP) {
+        this.enemyMP = enemyMP;
+    }
+
+    public Attack getBear1Attack1() {
+        return bear1Attack1;
+    }
+
+    public void setBear1Attack1(Attack bear1Attack1) {
+        this.bear1Attack1 = bear1Attack1;
+    }
+
+    public Attack getBear1Attack2() {
+        return bear1Attack2;
+    }
+
+    public void setBear1Attack2(Attack bear1Attack2) {
+        this.bear1Attack2 = bear1Attack2;
+    }
+
+    public int getForest1Bear1GoldReward() {
+        return forest1Bear1GoldReward;
+    }
+
+    public void setForest1Bear1GoldReward(int forest1Bear1GoldReward) {
+        this.forest1Bear1GoldReward = forest1Bear1GoldReward;
+    }
+
+    public int getForest1Bear1EXPReward() {
+        return forest1Bear1EXPReward;
+    }
+
+    public void setForest1Bear1EXPReward(int forest1Bear1EXPReward) {
+        this.forest1Bear1EXPReward = forest1Bear1EXPReward;
+    }
+
+    public int getBearLevel() {
+        return bearLevel;
+    }
+
+    public void setBearLevel(int bearLevel) {
+        this.bearLevel = bearLevel;
+    }
+
+    public Attack getCharAttack1() {
+        return charAttack1;
+    }
+
+    public void setCharAttack1(Attack charAttack1) {
+        this.charAttack1 = charAttack1;
+    }
+
+    public Attack getCharAttack2() {
+        return charAttack2;
+    }
+
+    public void setCharAttack2(Attack charAttack2) {
+        this.charAttack2 = charAttack2;
     }
 }

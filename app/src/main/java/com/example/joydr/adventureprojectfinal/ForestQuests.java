@@ -19,11 +19,12 @@ Button forestQuest1Button = null, forestQuest2Button = null;
         forestQuest1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-/*
-                Intent intent = new Intent(v.getContext(), FightLevel1Bear.class);
+
+                Intent intent = new Intent(v.getContext(), Forest1Bear1Combat.class);
+                Singleton.getInstance().setQuestTitle("Forest 1 Bear 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
-                */
+
             }
         });
 
