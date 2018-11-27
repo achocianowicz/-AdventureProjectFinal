@@ -35,7 +35,8 @@
         <activity android:name=".GameLobby" />
         <activity android:name=".Arena" />
         <activity android:name=".Chemist" />
-        <activity android:name=".Bank"></activity>
+        <activity android:name=".Bank" />
+        <activity android:name=".FailQuest"></activity>
     </application>
 
 </manifest>

@@ -37,6 +37,9 @@ public class Singleton {
         // town
         private String dayCount = null;
 
+        // Quest log
+        private boolean forestQuest1Done = false,forestQuest2Done = false;
+
         //Shop
                 // Weapons and potion
         private String weapon1Name ="sword", weapon2Name ="axe", weapon3Name = "spear";
@@ -66,7 +69,7 @@ public class Singleton {
 
         //Forest 1 bear 1 combat
         private String enemyName = "Bear";
-        private double enemyHP = 50, enemyMP = 0;
+        private double enemyHP = 50, enemyBaseHP= 50, enemyMP = 0;
         Attack bear1Attack1 = new Attack("Swipe", 10, 30);
         Attack bear1Attack2 = new Attack("Bite", 30, 90);
         private int forest1Bear1GoldReward = 100, forest1Bear1EXPReward = 100, bearLevel = 1;
@@ -505,6 +508,14 @@ public class Singleton {
         this.enemyHP = enemyHP;
     }
 
+    public double getEnemyBaseHP() {
+        return enemyBaseHP;
+    }
+
+    public void setEnemyBaseHP(double enemyBaseHP) {
+        this.enemyBaseHP = enemyBaseHP;
+    }
+
     public double getEnemyMP() {
         return enemyMP;
     }
@@ -648,5 +659,22 @@ public class Singleton {
         this.bear1 = bear1;
     }
 
+    // Forest Quest complete
 
+
+    public boolean isForestQuest1Done() {
+        return forestQuest1Done;
+    }
+
+    public void setForestQuest1Done(boolean forestQuest1Done) {
+        this.forestQuest1Done = forestQuest1Done;
+    }
+
+    public boolean isForestQuest2Done() {
+        return forestQuest2Done;
+    }
+
+    public void setForestQuest2Done(boolean forestQuest2Done) {
+        this.forestQuest2Done = forestQuest2Done;
+    }
 }

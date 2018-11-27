@@ -20,7 +20,8 @@ public class Forest1Bear1Combat extends AppCompatActivity {
     Button f1B1hpButton = null,f1B1mpButton = null,
             f1B1charAttack1 = null, f1B1charAttack2 = null, f1B1charSpell1 = null,
             f1B1charFlee = null,
-            f1B1toGoToReward = null;
+            f1B1toGoToReward = null,
+            f1B1toGoToFailQuest = null;
 
 
 
@@ -53,6 +54,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
         f1B1charFlee = findViewById(R.id.f1B1charFlee);
         f1B1toGoToReward = findViewById(R.id.f1B1toGoToReward);
+        f1B1toGoToFailQuest = findViewById(R.id.f1B1toGoToFailQuest);
 
         b1F1battleText = findViewById(R.id.b1F1battleText);
 // Enemy
@@ -73,6 +75,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         Attack charAttack2 = Singleton.getInstance().charAttack2;
 
         f1B1toGoToReward.setVisibility(View.INVISIBLE);
+        f1B1toGoToFailQuest.setVisibility(View.INVISIBLE);
         f1B1charAttack1.setText(Singleton.getInstance().getCharAttack1().getName());
         f1B1charAttack2.setText(Singleton.getInstance().getCharAttack2().getName());
         f1B1charSpell1.setText(Singleton.getInstance().getCharSpell1().getName());
@@ -89,14 +92,16 @@ public class Forest1Bear1Combat extends AppCompatActivity {
                 if(numberOfHP > 0){
                    int cCHP =  Integer.parseInt(Singleton.getInstance().getCharCurrentHP());
                     cCHP += 25;
+                    String setCharHP = String.valueOf(cCHP);
+                    Singleton.getInstance().setCharCurrentHP(setCharHP);
+                    f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+
                     numberOfHP--;
                     String setHPCount = String.valueOf(numberOfHP);
                     Singleton.getInstance().setHpCount(setHPCount);
-                    String setCharHP = String.valueOf(cCHP);
-                    Singleton.getInstance().setCharCurrentHP(setCharHP);
                     f1B1hpButton.setText(Singleton.getInstance().getHpCount());
-                    f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
-                    b1F1battleText.setText(f1B1charName.getText() + " Used a HP to Heal up by: " + setCharHP);
+
+                    b1F1battleText.setText(f1B1charName.getText() + " Used a HP to Heal up to: " + setCharHP);
 
                 }
                 else{
@@ -196,10 +201,23 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuestReward.class);
-
+                Singleton.getInstance().setForestQuest1Done(true);
                 //send exp and gold
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
+
+            }
+        });
+
+        f1B1toGoToFailQuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), FailQuest.class);
+                f1B1charImage.setImageResource(R.drawable.peasant2);
+                Singleton.getInstance().setEnemyHP(Singleton.getInstance().getEnemyBaseHP());
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
+                finish();
 
             }
         });
@@ -215,6 +233,18 @@ public class Forest1Bear1Combat extends AppCompatActivity {
       else{
           f1B1charImage.setImageResource(R.drawable.dead);
           //Char is dead
+
+
+          Singleton.getInstance().setQuestTitle("Forest1 Bear1 Combat");
+          Singleton.getInstance().setExpReward(0);
+          Singleton.getInstance().setGoldReward(0);
+
+          f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+          f1B1charAttack1.setVisibility(View.INVISIBLE);
+          f1B1charAttack2.setVisibility(View.INVISIBLE);
+          f1B1charSpell1.setVisibility(View.INVISIBLE);
+          f1B1hpButton.setVisibility(View.INVISIBLE);
+          f1B1mpButton.setVisibility(View.INVISIBLE);
       }
 
     }
@@ -431,6 +461,22 @@ public class Forest1Bear1Combat extends AppCompatActivity {
     @Override
     protected void  onResume() {
         super.onResume();
+
+        f1B1charName.setText(Singleton.getInstance().getCharName());
+        f1B1charLevel.setText("Level: " +Singleton.getInstance().getCharLevel());
+        f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+        f1B1charMP.setText("MP: " +Singleton.getInstance().getCharCurrentMagic());
+        //char attack
+        Attack charAttack1 = Singleton.getInstance().charAttack1;
+        Attack charAttack2 = Singleton.getInstance().charAttack2;
+
+        f1B1toGoToReward.setVisibility(View.INVISIBLE);
+        f1B1toGoToFailQuest.setVisibility(View.INVISIBLE);
+        f1B1charAttack1.setText(Singleton.getInstance().getCharAttack1().getName());
+        f1B1charAttack2.setText(Singleton.getInstance().getCharAttack2().getName());
+        f1B1charSpell1.setText(Singleton.getInstance().getCharSpell1().getName());
+        f1B1hpButton.setText(Singleton.getInstance().getHpCount());
+        f1B1mpButton.setText(Singleton.getInstance().getMpCount());
 
 
     }

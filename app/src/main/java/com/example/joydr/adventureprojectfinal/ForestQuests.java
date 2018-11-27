@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class ForestQuests extends AppCompatActivity {
 Button forestQuest1Button = null, forestQuest2Button = null;
+private boolean forestQuest1Done = false,forestQuest2Done = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +16,8 @@ Button forestQuest1Button = null, forestQuest2Button = null;
 
         forestQuest1Button = findViewById(R.id.forestQuest1Button);
         forestQuest2Button = findViewById(R.id.forestQuest2Button);
+
+        CompletedQuest();
 
         forestQuest1Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +27,7 @@ Button forestQuest1Button = null, forestQuest2Button = null;
                 Singleton.getInstance().setQuestTitle("Forest 1 Bear 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
+
 
             }
         });
@@ -36,9 +40,31 @@ Button forestQuest1Button = null, forestQuest2Button = null;
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
+
             }
         });
 
+    }
+
+    public void CompletedQuest(){
+        forestQuest1Done = Singleton.getInstance().isForestQuest1Done();
+                forestQuest2Done = Singleton.getInstance().isForestQuest2Done();
+        if (forestQuest1Done == true) {
+            forestQuest1Button.setBackgroundResource(R.color.colorAccent);
+            forestQuest1Button.setText("Complete");
+            forestQuest1Button.setClickable(false);
+        }
+        if (forestQuest2Done == true) {
+            forestQuest2Button.setBackgroundResource(R.color.colorAccent);
+            forestQuest2Button.setText("Complete");
+            forestQuest2Button.setClickable(false);
+        }
+    }
+
+    @Override
+    protected void  onResume() {
+        super.onResume();
+        CompletedQuest();
     }
 
 
