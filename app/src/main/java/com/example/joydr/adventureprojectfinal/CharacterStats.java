@@ -13,6 +13,7 @@ public class CharacterStats extends AppCompatActivity {
 
     currentWeapon_CharStats,currentWeaponAttack1Name_CharStats, currentWeaponAttack1Damage_CharStats, currentWeaponAttack1Speed_CharStats,
             currentWeaponAttack2Name_CharStats, currentWeaponAttack2Damage_CharStats, currentWeaponAttack2Speed_CharStats,
+    charSpell1Name_CharStats, charSpell1Damage_CharStats, charSpell1Speed_CharStats,
     hpCount_CharStats, mpCount_CharStats;
 
     Button addAttackButton_CharStats, addHealthButton_CharStats, addIntellButton_CharStats,addMagicButton_CharStats,
@@ -59,6 +60,11 @@ public class CharacterStats extends AppCompatActivity {
         currentWeaponAttack2Name_CharStats = findViewById(R.id.currentWeaponAttack2Name_CharStats);
         currentWeaponAttack2Damage_CharStats = findViewById(R.id.currentWeaponAttack2Damage_CharStats);
         currentWeaponAttack2Speed_CharStats = findViewById(R.id.currentWeaponAttack2Speed_CharStats);
+// Spell
+
+        charSpell1Name_CharStats = findViewById(R.id.charSpell1Name_CharStats);
+        charSpell1Damage_CharStats = findViewById(R.id.charSpell1Damage_CharStats);
+        charSpell1Speed_CharStats = findViewById(R.id.charSpell1Speed_CharStats);
 
         hpCount_CharStats = findViewById(R.id.hpCount_CharStats);
         mpCount_CharStats = findViewById(R.id.mpCount_CharStats);
@@ -81,7 +87,7 @@ public class CharacterStats extends AppCompatActivity {
         magic_CharStats.setText("Magic: " + Singleton.getInstance().getCharMagic());
         speed_CharStats.setText("Speed: " + Singleton.getInstance().getCharSpeed());
         dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
-
+//weapon
         currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
         currentWeaponAttack1Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack1().getName());
         currentWeaponAttack1Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack1().getDamage());
@@ -89,6 +95,13 @@ public class CharacterStats extends AppCompatActivity {
         currentWeaponAttack2Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack2().getName());
         currentWeaponAttack2Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack2().getDamage());
         currentWeaponAttack2Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack2().getSpeed());
+
+        // spell
+
+        charSpell1Name_CharStats.setText(Singleton.getInstance().getCharSpell1().getName());
+        charSpell1Damage_CharStats.setText("Damage: " + String.valueOf(Singleton.getInstance().getCharSpell1().getDamage()));
+        charSpell1Speed_CharStats.setText("Speed" +String.valueOf(Singleton.getInstance().getCharSpell1().getSpeed()));
+
         addAttackButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -260,6 +273,12 @@ public class CharacterStats extends AppCompatActivity {
         magic_CharStats.setText("Magic: " + Singleton.getInstance().getCharMagic());
         speed_CharStats.setText("Speed: " + Singleton.getInstance().getCharSpeed());
         dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
+
+        // spell
+
+        charSpell1Name_CharStats.setText(Singleton.getInstance().getCharSpell1().getName());
+        charSpell1Damage_CharStats.setText("Damage: " + String.valueOf(Singleton.getInstance().getCharSpell1().getDamage()));
+        charSpell1Speed_CharStats.setText("Speed" +String.valueOf(Singleton.getInstance().getCharSpell1().getSpeed()));
 
     }
 }

@@ -17,7 +17,8 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
     ImageView f1B1enemyImage = null, f1B1charImage = null;
 
-    Button f1B1hpButton = null,f1B1mpButton = null, f1B1charAttack1 = null, f1B1charAttack2 = null,
+    Button f1B1hpButton = null,f1B1mpButton = null,
+            f1B1charAttack1 = null, f1B1charAttack2 = null, f1B1charSpell1 = null,
             f1B1charFlee = null,
             f1B1toGoToReward = null;
 
@@ -45,8 +46,11 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
         f1B1hpButton = findViewById(R.id.f1B1hpButton);
         f1B1mpButton = findViewById(R.id.f1B1mpButton);
+
         f1B1charAttack1 = findViewById(R.id.f1B1charAttack1);
         f1B1charAttack2 = findViewById(R.id.f1B1charAttack2);
+        f1B1charSpell1 = findViewById(R.id.f1B1charSpell1);
+
         f1B1charFlee = findViewById(R.id.f1B1charFlee);
         f1B1toGoToReward = findViewById(R.id.f1B1toGoToReward);
 
@@ -71,9 +75,10 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         f1B1toGoToReward.setVisibility(View.INVISIBLE);
         f1B1charAttack1.setText(Singleton.getInstance().getCharAttack1().getName());
         f1B1charAttack2.setText(Singleton.getInstance().getCharAttack2().getName());
+        f1B1charSpell1.setText(Singleton.getInstance().getCharSpell1().getName());
         f1B1hpButton.setText(Singleton.getInstance().getHpCount());
         f1B1mpButton.setText(Singleton.getInstance().getMpCount());
-
+            CheckMagic();
         //#TODO set image views
 
         f1B1hpButton.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +122,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
                     Singleton.getInstance().setCharCurrentMagic(setCharMP);
                     f1B1charMP.setText("MP: " + Singleton.getInstance().getCharCurrentMagic());
                     b1F1battleText.setText(f1B1charName.getText() + " Used a MP to Power up");
+                    CheckMagic();
 
                 }
                 else {
@@ -139,6 +145,37 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             public void onClick(View v) {
                 Attack charAttack2 = Singleton.getInstance().charAttack2;
                 Combat( charAttack2);
+
+            }
+        });
+
+        f1B1charSpell1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Spell charSpell1 = Singleton.getInstance().charSpell1;
+                int cMagic =  Integer.parseInt(Singleton.getInstance().getCharCurrentMagic());
+                int magicCost = Integer.parseInt(Singleton.getInstance().charSpell1.getMagicCost());
+                if(cMagic >= magicCost) {
+
+                    b1F1battleText.setText(f1B1charName.getText() + " Has used " + f1B1charSpell1.getText().toString() + "!");
+
+                    cMagic -= magicCost;
+                    String setNewCurrentMana = String.valueOf(cMagic);
+                    Singleton.getInstance().setCharCurrentMagic(setNewCurrentMana);
+                    CheckMagic();
+                    double cEHP = Singleton.getInstance().getEnemyHP();
+                    b1F1battleText.setText(f1B1charName.getText() + " uses " + charSpell1.getName());
+                    cEHP -= charSpell1.getDamage();
+                    b1F1battleText.setText(charSpell1.getName() + " deals " + charSpell1.getDamage() + "to" + f1B1enemyName.getText());
+                    CheckEnemyHealth(cEHP);
+                    Singleton.getInstance().setEnemyHP(cEHP);
+                    f1B1enemyHP.setText("HP: " + Singleton.getInstance().getEnemyHP());
+                }
+                else{
+                    b1F1battleText.setText(charSpell1.getName() + " can't be used, not Enough Maigc. Need " + (magicCost - cMagic)  + "more Magic to Cast: " + charSpell1.getName());
+
+                }
+
 
             }
         });
@@ -193,6 +230,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             f1B1toGoToReward.setVisibility(View.VISIBLE);
             f1B1charAttack1.setVisibility(View.INVISIBLE);
             f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
             f1B1hpButton.setVisibility(View.INVISIBLE);
             f1B1mpButton.setVisibility(View.INVISIBLE);
 
@@ -302,6 +340,22 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         String setCharHP = String.valueOf(cCHP);
         Singleton.getInstance().setCharCurrentHP(setCharHP);
         f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+
+    }
+
+    public void CheckMagic() {
+
+        int cMagic =  Integer.parseInt(Singleton.getInstance().getCharCurrentMagic());
+        if( cMagic <= 0){
+            int setZeroMagic = 0 * cMagic;
+            String setMagic = String.valueOf(setZeroMagic);
+            Singleton.getInstance().setCharCurrentMagic(setMagic);
+            f1B1charMP.setText(Singleton.getInstance().getCharCurrentMagic());
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+        }
+        else {
+            f1B1charSpell1.setVisibility(View.VISIBLE);
+        }
 
     }
 
