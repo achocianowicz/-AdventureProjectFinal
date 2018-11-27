@@ -10,7 +10,9 @@ import android.widget.TextView;
 public class CharacterStats extends AppCompatActivity {
     TextView charName_CharStats, charLevel_CharStats,charCurrentEXP_CharStats,charEXPToNextLevel_CharStats, STR_CharStats,
             INTELL_CharStats,DEX_CharStats, attack_CharStats, health_CharStats,intell_CharStats, magic_CharStats, speed_CharStats,dodge_CharStats,
-    currentWeapon_CharStats, currentWeaponName_CharStats, currentWeaponAttack_CharStats, currentWeaponSpeed_CharStats,
+
+    currentWeapon_CharStats,currentWeaponAttack1Name_CharStats, currentWeaponAttack1Damage_CharStats, currentWeaponAttack1Speed_CharStats,
+            currentWeaponAttack2Name_CharStats, currentWeaponAttack2Damage_CharStats, currentWeaponAttack2Speed_CharStats,
     hpCount_CharStats, mpCount_CharStats;
 
     Button addAttackButton_CharStats, addHealthButton_CharStats, addIntellButton_CharStats,addMagicButton_CharStats,
@@ -51,9 +53,12 @@ public class CharacterStats extends AppCompatActivity {
 
       //  currentWeapon_CharStats, currentWeaponName_CharStats, currentWeaponAttack_CharStats, currentWeaponSpeed_CharStats
         currentWeapon_CharStats = findViewById(R.id.currentWeapon_CharStats);
-        currentWeaponName_CharStats = findViewById(R.id.currentWeaponName_CharStats);
-        currentWeaponAttack_CharStats = findViewById(R.id.currentWeaponAttack_CharStats);
-        currentWeaponSpeed_CharStats = findViewById(R.id.currentWeaponSpeed_CharStats);
+        currentWeaponAttack1Name_CharStats = findViewById(R.id.currentWeaponAttack1Name_CharStats);
+        currentWeaponAttack1Damage_CharStats = findViewById(R.id.currentWeaponAttack1Damage_CharStats);
+        currentWeaponAttack1Speed_CharStats = findViewById(R.id.currentWeaponAttack1Speed_CharStats);
+        currentWeaponAttack2Name_CharStats = findViewById(R.id.currentWeaponAttack2Name_CharStats);
+        currentWeaponAttack2Damage_CharStats = findViewById(R.id.currentWeaponAttack2Damage_CharStats);
+        currentWeaponAttack2Speed_CharStats = findViewById(R.id.currentWeaponAttack2Speed_CharStats);
 
         hpCount_CharStats = findViewById(R.id.hpCount_CharStats);
         mpCount_CharStats = findViewById(R.id.mpCount_CharStats);
@@ -78,9 +83,12 @@ public class CharacterStats extends AppCompatActivity {
         dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
 
         currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
-        currentWeaponName_CharStats.setText( "Name: " + Singleton.getInstance().getCharWeaponName());
-        currentWeaponAttack_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharWeaponAttack());
-        currentWeaponSpeed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharWeaponSpeed());
+        currentWeaponAttack1Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack1().getName());
+        currentWeaponAttack1Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack1().getDamage());
+        currentWeaponAttack1Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack1().getSpeed());
+        currentWeaponAttack2Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack2().getName());
+        currentWeaponAttack2Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack2().getDamage());
+        currentWeaponAttack2Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack2().getSpeed());
         addAttackButton_CharStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -231,9 +239,14 @@ public class CharacterStats extends AppCompatActivity {
     protected void  onResume() {
         super.onResume();
         currentWeapon_CharStats = findViewById(R.id.currentWeapon_CharStats);
-        currentWeaponName_CharStats = findViewById(R.id.currentWeaponName_CharStats);
-        currentWeaponAttack_CharStats = findViewById(R.id.currentWeaponAttack_CharStats);
-        currentWeaponSpeed_CharStats = findViewById(R.id.currentWeaponSpeed_CharStats);
+
+        currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
+        currentWeaponAttack1Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack1().getName());
+        currentWeaponAttack1Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack1().getDamage());
+        currentWeaponAttack1Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack1().getSpeed());
+        currentWeaponAttack2Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack2().getName());
+        currentWeaponAttack2Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack2().getDamage());
+        currentWeaponAttack2Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack2().getSpeed());
         hpCount_CharStats.setText("Health potion count: " + Singleton.getInstance().getHpCount());
         mpCount_CharStats.setText("Magic potion count: " + Singleton.getInstance().getMpCount());
 

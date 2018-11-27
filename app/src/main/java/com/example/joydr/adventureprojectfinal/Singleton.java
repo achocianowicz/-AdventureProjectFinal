@@ -21,17 +21,26 @@ public class Singleton {
     // char items
             private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null;
             private String hpCount = "0", mpCount = "0";
-            Attack charAttack1 = new Attack ("stab", 25, 40);
-            Attack charAttack2 = new Attack ("slice", 10, 90);
+           Attack charAttack1 = new Attack ();
+            Attack charAttack2 = new Attack ();
+    Attack[] attacks =  new Attack[]{charAttack1,charAttack2};
         // town
         private String dayCount = null;
 
         //Shop
 
         private String weapon1Name ="sword", weapon2Name ="axe", weapon3Name = "spear";
-        private String weapon1Attack =" 10", weapon2Attack =" 20", weapon3Attack =" 5";
-        private  String weapon1Speed = " 50", weapon2Speed = "80", weapon3Speed = " 20";
-        private String weapon1Cost = "100", weapon2Cost = "100", weapon3Cost = "100";
+    private String weapon1Attack =" 10", weapon2Attack =" 20", weapon3Attack =" 5";
+    private  String weapon1Speed = " 50", weapon2Speed = "80", weapon3Speed = " 20";
+    private String weapon1Cost = "100", weapon2Cost = "100", weapon3Cost = "100";
+
+    Weapon sword = new Weapon("Sword", 100,1,charAttack1 = new Attack ("stab", 15, 80)
+                ,charAttack2 = new Attack ("slice", 10, 90),attacks);
+    Weapon axe = new Weapon("Axe", 100,1,charAttack1 = new Attack ("club", 5, 90)
+            ,charAttack2 = new Attack ("chop", 30, 30),attacks);
+    Weapon spear = new Weapon("Spear", 100,1,charAttack1 = new Attack ("poke", 15, 90)
+            ,charAttack2 = new Attack ("thrust", 25, 20),attacks);
+
 
         //Quest rewards
         private  String questTitle = null;
@@ -536,5 +545,49 @@ public class Singleton {
 
     public void setCharAttack2(Attack charAttack2) {
         this.charAttack2 = charAttack2;
+    }
+
+    // weapons class weapons
+
+
+    public Attack[] getAttacks() {
+        return attacks;
+    }
+
+    public void setAttacks(Attack[] attacks) {
+        this.attacks = attacks;
+    }
+
+    public Weapon getSword() {
+        return sword;
+    }
+
+    public void setSword(Weapon sword) {
+        this.sword = sword;
+    }
+
+    public Weapon getAxe() {
+        return axe;
+    }
+
+    public void setAxe(Weapon axe) {
+        this.axe = axe;
+    }
+
+    public Weapon getSpear() {
+        return spear;
+    }
+
+    public void setSpear(Weapon spear) {
+        this.spear = spear;
+    }
+
+    // enemy list
+    public Bear getBear1() {
+        return bear1;
+    }
+
+    public void setBear1(Bear bear1) {
+        this.bear1 = bear1;
     }
 }

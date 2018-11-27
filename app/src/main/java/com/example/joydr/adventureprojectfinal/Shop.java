@@ -50,17 +50,17 @@ Button buyWeapon1, buyWeapon2, buyWeapon3, buyHPButton, buyMPButton;
 
         // Set Items
         boughtText.setText("Nothing Bought!");
-        weapon1Text.setText(Singleton.getInstance().getWeapon1Name());
+        weapon1Text.setText(Singleton.getInstance().sword.getName());
         weaponImage1.setBackgroundResource(R.drawable.sword);
-        costWeapon1Text.setText(Singleton.getInstance().getWeapon1Cost());
+        costWeapon1Text.setText(String.valueOf(Singleton.getInstance().sword.getCost()));
 
-        weapon2Text.setText(Singleton.getInstance().getWeapon2Name());
+        weapon2Text.setText(Singleton.getInstance().axe.getName());
         weaponImage2.setBackgroundResource(R.drawable.axe);
-        costWeapon2Text.setText(Singleton.getInstance().getWeapon2Cost());
+        costWeapon2Text.setText(String.valueOf(Singleton.getInstance().axe.getCost()));
 
-        weapon3Text.setText(Singleton.getInstance().getWeapon3Name());
+        weapon3Text.setText(Singleton.getInstance().spear.getName());
         weaponImage3.setBackgroundResource(R.drawable.spear);
-        costWeapon3Text.setText(Singleton.getInstance().getWeapon3Cost());
+        costWeapon3Text.setText(String.valueOf(Singleton.getInstance().spear.getCost()));
 
 
 
@@ -78,8 +78,9 @@ Button buyWeapon1, buyWeapon2, buyWeapon3, buyHPButton, buyMPButton;
                 Singleton.getInstance().setUserGold(nUG);
                 showUsersGold.setText(Singleton.getInstance().getUserGold());
                 Singleton.getInstance().setCharWeaponName(weapon1Text.getText().toString().trim());
-                Singleton.getInstance().setCharWeaponAttack(Singleton.getInstance().getWeapon1Attack());
-                Singleton.getInstance().setCharWeaponSpeed(Singleton.getInstance().getWeapon1Speed());
+                Singleton.getInstance().setCharAttack1(Singleton.getInstance().sword.attack1);
+                Singleton.getInstance().setCharAttack2(Singleton.getInstance().sword.attack2);
+
                 CheckGold();
                 boughtText.setText("Bought:" + weapon1Text.getText().toString().trim() + " !");
 
@@ -97,8 +98,8 @@ Button buyWeapon1, buyWeapon2, buyWeapon3, buyHPButton, buyMPButton;
                 Singleton.getInstance().setUserGold(nUG);
                 showUsersGold.setText(Singleton.getInstance().getUserGold());
                 Singleton.getInstance().setCharWeaponName(weapon2Text.getText().toString().trim());
-                Singleton.getInstance().setCharWeaponAttack(Singleton.getInstance().getWeapon2Attack());
-                Singleton.getInstance().setCharWeaponSpeed(Singleton.getInstance().getWeapon2Speed());
+                Singleton.getInstance().setCharAttack1(Singleton.getInstance().axe.attack1);
+                Singleton.getInstance().setCharAttack2(Singleton.getInstance().axe.attack2);
                 CheckGold();
                 boughtText.setText("Bought:" + weapon2Text.getText().toString().trim() + " !");
 
@@ -116,8 +117,8 @@ Button buyWeapon1, buyWeapon2, buyWeapon3, buyHPButton, buyMPButton;
                 Singleton.getInstance().setUserGold(nUG);
                 showUsersGold.setText(Singleton.getInstance().getUserGold());
                 Singleton.getInstance().setCharWeaponName(weapon3Text.getText().toString().trim());
-                Singleton.getInstance().setCharWeaponAttack(Singleton.getInstance().getWeapon3Attack());
-                Singleton.getInstance().setCharWeaponSpeed(Singleton.getInstance().getWeapon3Speed());
+                Singleton.getInstance().setCharAttack1(Singleton.getInstance().spear.attack1);
+                Singleton.getInstance().setCharAttack2(Singleton.getInstance().spear.attack2);
                 CheckGold();
                 boughtText.setText("Bought:" + weapon3Text.getText().toString().trim() + " !");
 

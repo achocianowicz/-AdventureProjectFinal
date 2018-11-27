@@ -69,6 +69,8 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         Attack charAttack2 = Singleton.getInstance().charAttack2;
 
         f1B1toGoToReward.setVisibility(View.INVISIBLE);
+        f1B1charAttack1.setText(Singleton.getInstance().getCharAttack1().getName());
+        f1B1charAttack2.setText(Singleton.getInstance().getCharAttack2().getName());
         f1B1hpButton.setText(Singleton.getInstance().getHpCount());
         f1B1mpButton.setText(Singleton.getInstance().getMpCount());
 
