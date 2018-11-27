@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class Town extends AppCompatActivity {
 
     TextView currentCharName = null, currentCharLevel = null, currentUserGold = null;
-    Button charStatsButton = null, questButton = null, charShopButton = null, anernaButton = null;
+    Button charStatsButton = null, questButton = null, charShopButton = null, arenaButton = null, chemistButton = null, bankButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,9 @@ public class Town extends AppCompatActivity {
         charStatsButton = findViewById(R.id.charStatsButton);
         questButton = findViewById(R.id.questButton);
         charShopButton = findViewById(R.id.charShopButton);
-        anernaButton = findViewById(R.id.arenaButton);
+        arenaButton = findViewById(R.id.arenaButton);
+        chemistButton = findViewById(R.id.chemistButton);
+        bankButton = findViewById(R.id.bankButton);
 
             String level = "Level: ", gold = "Gold: ";
         currentCharName.setText(Singleton.getInstance().getCharName());
@@ -65,17 +67,38 @@ public class Town extends AppCompatActivity {
             }
         });
 
-        anernaButton.setOnClickListener(new View.OnClickListener() {
+        arenaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Singleton.getInstance().setCharName(currentCharName.getText().toString());
+
+                Intent intent = new Intent(v.getContext(), Arena.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
+            }
+        });
+        chemistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Singleton.getInstance().setCharName(currentCharName.getText().toString());
+                //Chemist
+                Intent intent = new Intent(v.getContext(), Chemist.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
+            }
+        });
+        bankButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Singleton.getInstance().setCharName(currentCharName.getText().toString());
                 // #TODO go to anerna Game Lobby
-                Intent intent = new Intent(v.getContext(), RegionPicker.class);
+                Intent intent = new Intent(v.getContext(), Bank.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }
         });
     }
+
 
     @Override
     protected void  onResume() {

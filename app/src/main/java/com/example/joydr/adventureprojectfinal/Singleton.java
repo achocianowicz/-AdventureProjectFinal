@@ -15,20 +15,28 @@ public class Singleton {
 
         private String charName = null, charClass = null, charBaseHP = "100", charCurrentHP = "100",
                 charSTR = "0", charDEX = "0",
-                charLevel = "1", charOverallEXP = "0", charCurrentEXP = "0", charEXPToNextLevel = "100", STRPoint ="0", INTELLPoint ="0", DEXPoint ="0" ;
-    private String charAttack ="0", charHealth ="0", charINTELL = "0", charMagic = "0", charSpeed= "0", charDodge = "0", charCurrentMagic = "0", charBaseMagic = "0";
+                charLevel = "1",
+                charOverallEXP = "0", charCurrentEXP = "0",
+                charEXPToNextLevel = "100",
+                STRPoint ="0", INTELLPoint ="0", DEXPoint ="0" ;
+    private String charAttack ="0", charHealth ="0", charINTELL = "0", charMagic = "0", charSpeed= "0", charDodge = "0",
+            charCurrentMagic = "0", charBaseMagic = "0";
 
     // char items
-            private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null;
+            private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null,
+    charSpellName = null;
+
             private String hpCount = "0", mpCount = "0";
            Attack charAttack1 = new Attack ();
             Attack charAttack2 = new Attack ();
     Attack[] attacks =  new Attack[]{charAttack1,charAttack2};
+    Spell charSpell1 = new Spell();
+    Spell[] spellBook = new Spell[]{charSpell1};
         // town
         private String dayCount = null;
 
         //Shop
-
+                // Weapons and potion
         private String weapon1Name ="sword", weapon2Name ="axe", weapon3Name = "spear";
     private String weapon1Attack =" 10", weapon2Attack =" 20", weapon3Attack =" 5";
     private  String weapon1Speed = " 50", weapon2Speed = "80", weapon3Speed = " 20";
@@ -41,7 +49,8 @@ public class Singleton {
     Weapon spear = new Weapon("Spear", 100,1,charAttack1 = new Attack ("poke", 15, 90)
             ,charAttack2 = new Attack ("thrust", 25, 20),attacks);
 
-
+//Chemist
+    Spell fireball = new Spell("Fireball", 100, "25", 40, 10);
         //Quest rewards
         private  String questTitle = null;
         private int expReward = -1, goldReward = -1;
@@ -582,6 +591,41 @@ public class Singleton {
         this.spear = spear;
     }
 
+    // spellbook
+
+
+    public Spell getCharSpell1() {
+        return charSpell1;
+    }
+
+    public void setCharSpell1(Spell charSpell1) {
+        this.charSpell1 = charSpell1;
+    }
+
+    public Spell[] getSpellBook() {
+        return spellBook;
+    }
+
+    public void setSpellBook(Spell[] spellBook) {
+        this.spellBook = spellBook;
+    }
+
+    public Spell getFireball() {
+        return fireball;
+    }
+
+    public void setFireball(Spell fireball) {
+        this.fireball = fireball;
+    }
+
+    public String getCharSpellName() {
+        return charSpellName;
+    }
+
+    public void setCharSpellName(String charSpellName) {
+        this.charSpellName = charSpellName;
+    }
+
     // enemy list
     public Bear getBear1() {
         return bear1;
@@ -590,4 +634,6 @@ public class Singleton {
     public void setBear1(Bear bear1) {
         this.bear1 = bear1;
     }
+
+
 }
