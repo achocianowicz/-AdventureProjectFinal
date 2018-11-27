@@ -23,14 +23,16 @@ public class Singleton {
             charCurrentMagic = "0", charBaseMagic = "0";
 
     // char items
-            private String charWeaponName = null, charWeaponAttack = null, charWeaponSpeed = null,
+            private String charWeaponName = "Hands", charWeaponAttack = null, charWeaponSpeed = null,
     charSpellName = null;
-
+// start attacks and spell
+//Spell puffOfAir = new Spell("Puff of Air", 0, "0", 0, 1);
             private String hpCount = "0", mpCount = "0";
-           Attack charAttack1 = new Attack ();
-            Attack charAttack2 = new Attack ();
+           Attack charAttack1 = new Attack ("Slap", 1,1);
+
+            Attack charAttack2 = new Attack ("Punch",5, 20);
     Attack[] attacks =  new Attack[]{charAttack1,charAttack2};
-    Spell charSpell1 = new Spell();
+    Spell charSpell1 = new Spell("Puff of Air", 0, "0", 0, 1);
     Spell[] spellBook = new Spell[]{charSpell1};
         // town
         private String dayCount = null;
@@ -48,6 +50,9 @@ public class Singleton {
             ,charAttack2 = new Attack ("chop", 30, 30),attacks);
     Weapon spear = new Weapon("Spear", 100,1,charAttack1 = new Attack ("poke", 15, 90)
             ,charAttack2 = new Attack ("thrust", 25, 20),attacks);
+    //last weapon in  list
+    Weapon hand = new Weapon("Hands", 0,1,charAttack1 = new Attack ("Slap", 1, 1)
+            ,charAttack2 = new Attack ("Punch", 5, 20),attacks);
 
 //Chemist
     Spell fireball = new Spell("Fireball", 100, "25", 40, 10);
@@ -62,7 +67,7 @@ public class Singleton {
         //Forest 1 bear 1 combat
         private String enemyName = "Bear";
         private double enemyHP = 50, enemyMP = 0;
-        Attack bear1Attack1 = new Attack("Swipe", 10, 50);
+        Attack bear1Attack1 = new Attack("Swipe", 10, 30);
         Attack bear1Attack2 = new Attack("Bite", 30, 90);
         private int forest1Bear1GoldReward = 100, forest1Bear1EXPReward = 100, bearLevel = 1;
         Bear bear1 = new Bear();

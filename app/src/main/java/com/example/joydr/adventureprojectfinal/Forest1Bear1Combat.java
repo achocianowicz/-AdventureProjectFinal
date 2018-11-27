@@ -113,16 +113,20 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
                 if(numberOfMP > 0){
                     int cCMP =  Integer.parseInt(Singleton.getInstance().getCharCurrentMagic());
+                    // add magice
                     cCMP += 25;
                     String setCharMP = String.valueOf(cCMP);
+                    Singleton.getInstance().setCharCurrentMagic(setCharMP);
+                    CheckMagic();
+                    f1B1charMP.setText("MP: " + Singleton.getInstance().getCharCurrentMagic());
+                    // minus potion
                     numberOfMP--;
                     String setMPCount = String.valueOf(numberOfMP);
                     Singleton.getInstance().setMpCount(setMPCount);
                     f1B1mpButton.setText(Singleton.getInstance().getMpCount());
-                    Singleton.getInstance().setCharCurrentMagic(setCharMP);
-                    f1B1charMP.setText("MP: " + Singleton.getInstance().getCharCurrentMagic());
+
                     b1F1battleText.setText(f1B1charName.getText() + " Used a MP to Power up");
-                    CheckMagic();
+
 
                 }
                 else {
@@ -165,8 +169,9 @@ public class Forest1Bear1Combat extends AppCompatActivity {
                     CheckMagic();
                     double cEHP = Singleton.getInstance().getEnemyHP();
                     b1F1battleText.setText(f1B1charName.getText() + " uses " + charSpell1.getName());
-                    cEHP -= charSpell1.getDamage();
-                    b1F1battleText.setText(charSpell1.getName() + " deals " + charSpell1.getDamage() + "to" + f1B1enemyName.getText());
+                    cEHP -= (charSpell1.getDamage() + Double.parseDouble(Singleton.getInstance().getCharMagic()));
+                    b1F1battleText.setText(charSpell1.getName() + " deals " + (charSpell1.getDamage() + Double.parseDouble(Singleton.getInstance().getCharMagic()))
+                            + "to" + f1B1enemyName.getText());
                     CheckEnemyHealth(cEHP);
                     Singleton.getInstance().setEnemyHP(cEHP);
                     f1B1enemyHP.setText("HP: " + Singleton.getInstance().getEnemyHP());
@@ -296,36 +301,59 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
     }
 
+    public void CharDodge(Attack enemyAttack, Attack  charAttack){
+
+    }
+
+    public void EnemyHit( Attack enemyAttack, Attack  charAttack){
+
+
+    }
     public void EnemyAttack( Attack enemyAttack, Attack  charAttack){
         Double cCHP =  Double.parseDouble(Singleton.getInstance().getCharCurrentHP());
         b1F1battleText.setText(f1B1enemyName.getText() + " uses " + enemyAttack.getName());
-        cCHP -= enemyAttack.getDamage();
-        b1F1battleText.setText(enemyAttack.getName() + " deals " + enemyAttack.getDamage() + "to" + f1B1charName.getText());
-        CheckCharHealth(cCHP);
-        String setCharHP = String.valueOf(cCHP);
-        Singleton.getInstance().setCharCurrentHP(setCharHP);
-        f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+
+      //  CharDodge( enemyAttack, charAttack);
+        int hit = new Random().nextInt(100) + 1;
+        int charDodge = Integer.parseInt(Singleton.getInstance().getCharDodge());
+        if(charDodge > hit)
+        {
+            b1F1battleText.setText(charAttack.getName() + " misses with the Attack on  "  + f1B1enemyName.getText());
+            // miss
+        }
+
+        else{
+
+           // EnemyHit( enemyAttack, charAttack);
+            cCHP -= enemyAttack.getDamage();
+            b1F1battleText.setText(enemyAttack.getName() + " deals " + enemyAttack.getDamage() + "to" + f1B1charName.getText());
+            CheckCharHealth(cCHP);
+            String setCharHP = String.valueOf(cCHP);
+            Singleton.getInstance().setCharCurrentHP(setCharHP);
+            f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+        }
+
+
 //
         double cEHP =  Singleton.getInstance().getEnemyHP();
         b1F1battleText.setText(f1B1charName.getText() + " uses " + charAttack.getName());
-        cEHP -= enemyAttack.getDamage();
-        b1F1battleText.setText(charAttack.getName() + " deals " + charAttack.getDamage() + "to" + f1B1enemyName.getText());
+        cEHP -= (charAttack.getDamage() + Double.parseDouble(Singleton.getInstance().getCharAttack()));
+        b1F1battleText.setText(charAttack.getName() + " deals " + (charAttack.getDamage() + Double.parseDouble(Singleton.getInstance().getCharAttack()))
+                + "to" + f1B1enemyName.getText());
         CheckEnemyHealth(cEHP);
 
         Singleton.getInstance().setEnemyHP(cEHP);
 
         f1B1enemyHP.setText("HP: " + Singleton.getInstance().getEnemyHP());
-
-
-
-
+        RegenerateHPandMP();
     }
 
     public void PlayerAttack( Attack enemyAttack, Attack  charAttack){
         double cEHP =  Singleton.getInstance().getEnemyHP();
         b1F1battleText.setText(f1B1charName.getText() + " uses " + charAttack.getName());
-        cEHP -= enemyAttack.getDamage();
-        b1F1battleText.setText(charAttack.getName() + " deals " + charAttack.getDamage() + "to" + f1B1enemyName.getText());
+        cEHP -= (charAttack.getDamage() + Double.parseDouble(Singleton.getInstance().getCharAttack()));
+        b1F1battleText.setText(charAttack.getName() + " deals " + (charAttack.getDamage() + Double.parseDouble(Singleton.getInstance().getCharAttack()))
+                + "to" + f1B1enemyName.getText());
         CheckEnemyHealth(cEHP);
         Singleton.getInstance().setEnemyHP(cEHP);
         f1B1enemyHP.setText("HP: " + Singleton.getInstance().getEnemyHP());
@@ -333,19 +361,32 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         //
 
         Double cCHP =  Double.parseDouble(Singleton.getInstance().getCharCurrentHP());
-        b1F1battleText.setText(f1B1enemyName.getText() + " uses " + enemyAttack.getName());
-        cCHP -= enemyAttack.getDamage();
-        b1F1battleText.setText(enemyAttack.getName() + " deals " + enemyAttack.getDamage() + "to" + f1B1charName.getText());
-        CheckCharHealth(cCHP);
-        String setCharHP = String.valueOf(cCHP);
-        Singleton.getInstance().setCharCurrentHP(setCharHP);
-        f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+        int hit = new Random().nextInt(100) + 1;
+        int charDodge = Integer.parseInt(Singleton.getInstance().getCharDodge());
+        if(charDodge > hit)
+        {
+            b1F1battleText.setText(charAttack.getName() + " misses with the Attack on  "  + f1B1enemyName.getText());
+            // miss
+        }
+
+        else{
+            // EnemyHit( enemyAttack, charAttack);
+            cCHP -= enemyAttack.getDamage();
+            b1F1battleText.setText(enemyAttack.getName() + " deals " + enemyAttack.getDamage() + "to" + f1B1charName.getText());
+            CheckCharHealth(cCHP);
+            String setCharHP = String.valueOf(cCHP);
+            Singleton.getInstance().setCharCurrentHP(setCharHP);
+            f1B1charHP.setText("HP: " + Singleton.getInstance().getCharCurrentHP());
+        }
+        RegenerateHPandMP();
 
     }
 
     public void CheckMagic() {
-
+        Spell charSpell1 = Singleton.getInstance().charSpell1;
         int cMagic =  Integer.parseInt(Singleton.getInstance().getCharCurrentMagic());
+        int magicCost = Integer.parseInt(Singleton.getInstance().charSpell1.getMagicCost());
+
         if( cMagic <= 0){
             int setZeroMagic = 0 * cMagic;
             String setMagic = String.valueOf(setZeroMagic);
@@ -353,9 +394,44 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             f1B1charMP.setText(Singleton.getInstance().getCharCurrentMagic());
             f1B1charSpell1.setVisibility(View.INVISIBLE);
         }
-        else {
+
+        else if(cMagic >= magicCost) {
+
             f1B1charSpell1.setVisibility(View.VISIBLE);
         }
+
+
+        else {
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+
+        }
+
+    }
+
+    public void RegenerateHPandMP(){
+        Double cCHP =  Double.parseDouble(Singleton.getInstance().getCharCurrentHP());
+        Double healthReg = Double.parseDouble(Singleton.getInstance().getCharHealth());
+        int cMagic =  Integer.parseInt(Singleton.getInstance().getCharCurrentMagic());
+        int magicReg = Integer.parseInt(Singleton.getInstance().getCharINTELL());
+
+        cCHP +=healthReg;
+        String newCharHp = String.valueOf(cCHP);
+        Singleton.getInstance().setCharCurrentHP(newCharHp);
+        f1B1charHP.setText(Singleton.getInstance().getCharCurrentHP());
+
+        cMagic +=magicReg;
+        String newCharMp = String.valueOf(cMagic);
+        Singleton.getInstance().setCharCurrentMagic(newCharMp);
+        CheckMagic();
+        f1B1charMP.setText(Singleton.getInstance().getCharCurrentMagic());
+
+
+    }
+
+    @Override
+    protected void  onResume() {
+        super.onResume();
+
 
     }
 
