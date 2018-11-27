@@ -9,7 +9,7 @@ public class Singleton {
 
 
         //current User account
-        private String accountName = "username", password = "password", userLevel ="1", userEXP = "0", userGold = "100";
+        private String accountName = "username", password = "password", userLevel ="1", userEXP = "0", userGold = "100", userUID = "-1";
 
         // Current User's account chacarter info
 
@@ -69,6 +69,14 @@ public class Singleton {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+
+    public String getUserUID() {
+        return userUID;
+    }
+
+    public void setUserUID(String userUID) {
+        this.userUID = userUID;
     }
 
     public String getPassword() {
