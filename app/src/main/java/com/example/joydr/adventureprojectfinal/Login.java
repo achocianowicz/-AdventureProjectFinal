@@ -25,6 +25,8 @@ public class Login extends AppCompatActivity
     Button loginButton = null;
     private String accountName = null, password = null;
     private FirebaseAuth mAuth;
+    FirebaseUser currentUser = null;
+    String currentUserUID = null;
     Context packageContext = null;
 
     @Override
@@ -110,7 +112,7 @@ public class Login extends AppCompatActivity
     {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
 
@@ -131,6 +133,12 @@ public class Login extends AppCompatActivity
 
                     Singleton.getInstance().setAccountName(accountName);
                     Singleton.getInstance().setPassword(password);
+
+                    if (currentUser != null)
+                    {
+                        currentUserUID = currentUser.getUid();
+                        Singleton.getInstance().setUserUID(currentUserUID);
+                    }
 
                     Intent intent = new Intent(packageContext, UserAccount.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

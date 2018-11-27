@@ -6,12 +6,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class UserAccount extends AppCompatActivity {
-Button createCharButton = null, userAccountSaveButton = null, userAccountExitGameButton = null;
+    Button createCharButton = null, userAccountSaveButton = null, userAccountExitGameButton = null;
+    private DatabaseReference mDatabase;
+
+    String currentUserUID = Singleton.getInstance().getUserUID();
+    String accountName = Singleton.getInstance().getAccountName();
+    String userLevel = Singleton.getInstance().getUserLevel();
+    String userEXP = Singleton.getInstance().getUserEXP();
+    String userGold = Singleton.getInstance().getUserGold();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         createCharButton = findViewById(R.id.createCharButton);
         userAccountSaveButton = findViewById(R.id.userAccountSaveButton);
@@ -32,6 +46,18 @@ Button createCharButton = null, userAccountSaveButton = null, userAccountExitGam
             public void onClick(View v) {
 
                 //Save to DB
+
+                // Write a message to the database
+                //FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //DatabaseReference myRef = database.getReference("message");
+
+                //myRef.setValue("Hello, World!");
+
+                mDatabase.child("users").child(currentUserUID).setValue(null);
+                mDatabase.child("users").child(currentUserUID).child("accountName").setValue(accountName);
+                mDatabase.child("users").child(currentUserUID).child("userLevel").setValue(userLevel);
+                mDatabase.child("users").child(currentUserUID).child("userEXP").setValue(userEXP);
+                mDatabase.child("users").child(currentUserUID).child("userGold").setValue(userGold);
 
             }
         });
