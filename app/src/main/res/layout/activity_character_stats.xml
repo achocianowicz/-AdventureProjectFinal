@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
@@ -31,7 +30,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
@@ -52,20 +50,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/STR_CharStats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="STR : 0" />
+                android:text="STR : 0"
+                android:textAlignment="center" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -152,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Dodge" />
+                    android:text="Dodge: 0" />
             </LinearLayout>
         </LinearLayout>
 
@@ -161,7 +159,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
@@ -210,7 +207,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
@@ -218,28 +214,59 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="WeaponName" />
 
         <TextView
-            android:id="@+id/currentWeaponName_CharStats"
+            android:id="@+id/currentWeaponAttack1Name_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="Attack 1 Name" />
 
         <TextView
-            android:id="@+id/currentWeaponAttack_CharStats"
+            android:id="@+id/currentWeaponAttack1Damage_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="Damage : 10" />
 
         <TextView
-            android:id="@+id/currentWeaponSpeed_CharStats"
+            android:id="@+id/currentWeaponAttack1Speed_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="Speed : 30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/currentWeaponAttack2Name_CharStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Attack 2 Name"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/currentWeaponAttack2Damage_CharStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Damage: 15"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/currentWeaponAttack2Speed_CharStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Speed: 90"
+            android:textAlignment="center" />
     </LinearLayout>
 
     <LinearLayout
