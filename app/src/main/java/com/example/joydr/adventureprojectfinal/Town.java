@@ -10,12 +10,24 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.threeten.bp.Instant;
+
 public class Town extends AppCompatActivity {
 
     TextView currentCharName = null, currentCharLevel = null, currentUserGold = null;
     Button charStatsButton = null, questButton = null, charShopButton = null, arenaButton = null, chemistButton = null, bankButton = null,
             SaveTownButton=null;
     private DatabaseReference mDatabase;
+
+    String currentUserUID = "";
+    String accountName = "";
+    String saveDateTime = "";
+    String userLevel = "";
+    String userEXP = "";
+    String userGold = "";
+    String userChar = "";
+    String charWeapon = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,16 +128,18 @@ public class Town extends AppCompatActivity {
 
                 //myRef.setValue("Hello, World!");
 
-              String  currentUserUID = Singleton.getInstance().getUserUID();
-                String accountName = Singleton.getInstance().getAccountName();
-                String userLevel = Singleton.getInstance().getUserLevel();
-                String  userEXP = Singleton.getInstance().getUserEXP();
-                String  userGold = Singleton.getInstance().getUserGold();
-                String userChar = Singleton.getInstance().getCharName();
-                String charWeapon = Singleton.getInstance().getCharWeaponName();
+                currentUserUID = Singleton.getInstance().getUserUID();
+                accountName = Singleton.getInstance().getAccountName();
+                saveDateTime = Instant.now().toString();
+                userLevel = Singleton.getInstance().getUserLevel();
+                userEXP = Singleton.getInstance().getUserEXP();
+                userGold = Singleton.getInstance().getUserGold();
+                userChar = Singleton.getInstance().getCharName();
+                charWeapon = Singleton.getInstance().getCharWeaponName();
 
                 mDatabase.child("users").child(currentUserUID).setValue(null);
                 mDatabase.child("users").child(currentUserUID).child("accountName").setValue(accountName);
+                mDatabase.child("users").child(currentUserUID).child("saveDateTime").setValue(saveDateTime);
                 mDatabase.child("users").child(currentUserUID).child("userLevel").setValue(userLevel);
                 mDatabase.child("users").child(currentUserUID).child("userEXP").setValue(userEXP);
                 mDatabase.child("users").child(currentUserUID).child("userGold").setValue(userGold);

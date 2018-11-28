@@ -9,15 +9,20 @@ import android.widget.Button;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.threeten.bp.Instant;
+
 public class UserAccount extends AppCompatActivity {
     Button createCharButton = null, userAccountSaveButton = null, userAccountExitGameButton = null;
     private DatabaseReference mDatabase;
 
-    String currentUserUID = Singleton.getInstance().getUserUID();
-    String accountName = Singleton.getInstance().getAccountName();
-    String userLevel = Singleton.getInstance().getUserLevel();
-    String userEXP = Singleton.getInstance().getUserEXP();
-    String userGold = Singleton.getInstance().getUserGold();
+    String currentUserUID = "";
+    String accountName = "";
+    String saveDateTime = "";
+    String userLevel = "";
+    String userEXP = "";
+    String userGold = "";
+    String userChar = "";
+    String charWeapon = "";
 
 
     @Override
@@ -55,15 +60,21 @@ public class UserAccount extends AppCompatActivity {
 
                 currentUserUID = Singleton.getInstance().getUserUID();
                 accountName = Singleton.getInstance().getAccountName();
+                saveDateTime = Instant.now().toString();
                 userLevel = Singleton.getInstance().getUserLevel();
                 userEXP = Singleton.getInstance().getUserEXP();
                 userGold = Singleton.getInstance().getUserGold();
+                userChar = Singleton.getInstance().getCharName();
+                charWeapon = Singleton.getInstance().getCharWeaponName();
 
                 mDatabase.child("users").child(currentUserUID).setValue(null);
                 mDatabase.child("users").child(currentUserUID).child("accountName").setValue(accountName);
+                mDatabase.child("users").child(currentUserUID).child("saveDateTime").setValue(saveDateTime);
                 mDatabase.child("users").child(currentUserUID).child("userLevel").setValue(userLevel);
                 mDatabase.child("users").child(currentUserUID).child("userEXP").setValue(userEXP);
                 mDatabase.child("users").child(currentUserUID).child("userGold").setValue(userGold);
+                mDatabase.child("users").child(currentUserUID).child("userChar").setValue(userChar);
+                mDatabase.child("users").child(currentUserUID).child("charWeapon").setValue(charWeapon);
 
             }
         });
