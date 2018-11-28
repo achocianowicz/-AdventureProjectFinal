@@ -53,6 +53,12 @@ public class UserAccount extends AppCompatActivity {
 
                 //myRef.setValue("Hello, World!");
 
+                currentUserUID = Singleton.getInstance().getUserUID();
+                accountName = Singleton.getInstance().getAccountName();
+                userLevel = Singleton.getInstance().getUserLevel();
+                userEXP = Singleton.getInstance().getUserEXP();
+                userGold = Singleton.getInstance().getUserGold();
+
                 mDatabase.child("users").child(currentUserUID).setValue(null);
                 mDatabase.child("users").child(currentUserUID).child("accountName").setValue(accountName);
                 mDatabase.child("users").child(currentUserUID).child("userLevel").setValue(userLevel);
