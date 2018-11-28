@@ -6,7 +6,8 @@ public class Singleton {
         private static Singleton single_instance = null;
 
         //Users accounts
-
+//saved car name
+    private String savedCharName =null;
 
         //current User account
         private String accountName = "username", password = "password", userLevel ="1", userEXP = "0", userGold = "100", userUID = "-1";
@@ -676,5 +677,13 @@ public class Singleton {
 
     public void setForestQuest2Done(boolean forestQuest2Done) {
         this.forestQuest2Done = forestQuest2Done;
+    }
+
+    public String getSavedCharName() {
+        return savedCharName;
+    }
+
+    public void setSavedCharName(String savedCharName) {
+        this.savedCharName = savedCharName;
     }
 }
