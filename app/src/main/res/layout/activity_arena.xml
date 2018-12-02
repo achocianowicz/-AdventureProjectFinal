@@ -222,13 +222,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/ArenatoGoToReward"
-        android:layout_width="132dp"
+        android:id="@+id/ArenatoGoToCombatReport"
+        android:layout_width="164dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Claim Reward"
+        android:text="Combat Report"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.855"

@@ -8,8 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 
-import com.example.joydr.adventureprojectfinal.GameLobby;
-
 public class SMSReceiver extends BroadcastReceiver {
     GameLobby activity = null;
     final IntentFilter intentFilter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
@@ -42,4 +40,3 @@ public class SMSReceiver extends BroadcastReceiver {
         }
     }
 }
-

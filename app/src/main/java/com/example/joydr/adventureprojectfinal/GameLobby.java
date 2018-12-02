@@ -41,15 +41,15 @@ public class GameLobby extends AppCompatActivity {
     private boolean isStarfishButton =false, isTankButton = false,isGulfclubButton =false ;
 
     //added
-    Button accpetButton =null, declineButton = null;
+  //  Button accpetButton =null, declineButton = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_lobby);
 
-        primarySentName = getIntent().getExtras().get("PLAYER_NAME").toString();
-        secondarySentName = primarySentName;
+        //primarySentName = getIntent().getExtras().get("PLAYER_NAME").toString();
+        // = primarySentName;
 
         phoneNumberText = findViewById(R.id.phoneNumberText);
 
@@ -58,12 +58,12 @@ public class GameLobby extends AppCompatActivity {
 
 
         sendButton = findViewById(R.id.sendMessageButton);
-
+/*
         accpetButton.setVisibility(View.INVISIBLE);
         declineButton.setVisibility(View.INVISIBLE);
         accpetButton.setEnabled(false);
         declineButton.setEnabled(false);
-
+*/
         ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.SEND_SMS,
                 android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.READ_SMS,
                 android.Manifest.permission.RECEIVE_SMS},1);
@@ -89,7 +89,7 @@ public class GameLobby extends AppCompatActivity {
 
             }
         });
-
+/*
         accpetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +101,8 @@ public class GameLobby extends AppCompatActivity {
                 v.getContext().startActivity(intent);
             }
         });
-
+        */
+/*
         declineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +116,7 @@ public class GameLobby extends AppCompatActivity {
 
             }
         });
+        */
 
         SMSReceiver smsReceiver = new SMSReceiver(this);
         if(!isSmsPermissionGranted())
@@ -211,10 +213,12 @@ public class GameLobby extends AppCompatActivity {
     {
         receivedPhopneNumberText.setText(number);
         receivedMessageText.setText(message);
+        /*
         accpetButton.setVisibility(View.VISIBLE);
         declineButton.setVisibility(View.VISIBLE);
         accpetButton.setEnabled(true);
         declineButton.setEnabled(true);
+        */
     }
 
     /** * Check if we have SMS permission */

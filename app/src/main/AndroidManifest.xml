@@ -36,7 +36,8 @@
         <activity android:name=".Arena" />
         <activity android:name=".Chemist" />
         <activity android:name=".Bank" />
-        <activity android:name=".FailQuest"></activity>
+        <activity android:name=".FailQuest" />
+        <activity android:name=".CombatReport"></activity>
     </application>
 
 </manifest>
