@@ -90,7 +90,7 @@ public class Town extends AppCompatActivity {
             public void onClick(View v) {
                 Singleton.getInstance().setCharName(currentCharName.getText().toString());
 
-                Intent intent = new Intent(v.getContext(), Arena.class);
+                Intent intent = new Intent(v.getContext(), GameLobby.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }
