@@ -21,8 +21,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class GameLobby extends AppCompatActivity {
-
+public class GameLobby extends AppCompatActivity
+{
     String primarySentName = "PrimarySentTest";
     String receivedName = "receivedTest";
     String secondarySentName = "SecondarySentTest";
@@ -41,7 +41,8 @@ public class GameLobby extends AppCompatActivity {
     private boolean isStarfishButton =false, isTankButton = false,isGulfclubButton =false ;
 
     //added
-  //  Button accpetButton =null, declineButton = null;
+    //  Button accpetButton =null, declineButton = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -58,18 +59,17 @@ public class GameLobby extends AppCompatActivity {
 
 
         sendButton = findViewById(R.id.sendMessageButton);
-/*
+
+        /*
         accpetButton.setVisibility(View.INVISIBLE);
         declineButton.setVisibility(View.INVISIBLE);
         accpetButton.setEnabled(false);
         declineButton.setEnabled(false);
-*/
+        */
+
         ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.SEND_SMS,
                 android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.READ_SMS,
                 android.Manifest.permission.RECEIVE_SMS},1);
-
-
-
 
         sendButton.setOnClickListener(new View.OnClickListener()
         {
@@ -86,10 +86,10 @@ public class GameLobby extends AppCompatActivity {
 
                 smsManager.sendTextMessage(number, null, "$ASSIGN4TTT$NAME,,," + primarySentName,
                         null, null);
-
             }
         });
-/*
+
+        /*
         accpetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +102,8 @@ public class GameLobby extends AppCompatActivity {
             }
         });
         */
-/*
+
+        /*
         declineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,8 +120,11 @@ public class GameLobby extends AppCompatActivity {
         */
 
         SMSReceiver smsReceiver = new SMSReceiver(this);
+
         if(!isSmsPermissionGranted())
+        {
             requestReadAndSendSmsPermission();
+        }
 
         broadcastReceiver = new BroadcastReceiver()
         {
@@ -157,13 +161,15 @@ public class GameLobby extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int whichButton)
                                         {
                                             smsManager.sendTextMessage(number, null,
-                                                    "$ASSIGN4TTT$NAME,,," + secondarySentName, null, null);
+                                                    "$ASSIGN4TTT$NAME,,," + secondarySentName,
+                                                    null, null);
 
                                             smsManager.sendTextMessage(number, null,
                                                     MessageHandler.getAcceptMessage(), null, null);
 
                                             smsManager.sendTextMessage(number, null,
-                                                    "$ASSIGN4TTT$NAME,,," + secondarySentName, null, null);
+                                                    "$ASSIGN4TTT$NAME,,," + secondarySentName,
+                                                    null, null);
 
                                             Intent i = new Intent(context, Arena.class);
                                             i.putExtra("NUMBER", number);
@@ -222,16 +228,23 @@ public class GameLobby extends AppCompatActivity {
     }
 
     /** * Check if we have SMS permission */
-    public boolean isSmsPermissionGranted() {
-        return ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED;
+    public boolean isSmsPermissionGranted()
+    {
+        return ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_SMS)
+                == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS)
+                        == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS)
+                        == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE)
+                        == PackageManager.PERMISSION_GRANTED;
     }
 
     /** * Request runtime SMS permission*/
-    private void requestReadAndSendSmsPermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_SMS)) {
+    private void requestReadAndSendSmsPermission()
+    {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_SMS))
+        {
 
         }
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_SMS,
@@ -240,5 +253,3 @@ public class GameLobby extends AppCompatActivity {
                 Manifest.permission.READ_PHONE_STATE}, 1);
     }
 }
-
-

@@ -2,7 +2,7 @@ package com.example.joydr.adventureprojectfinal;
 
 public final class MessageHandler
 {
-    private static final String UNIQUE_KEY = "$ASSIGN4TTT$";
+    private static final String UNIQUE_KEY = "$FINALPROJAG$";
     private static final String DELIMITER = ",,,";
 
     private static final String INVITE = "INVITE";
@@ -10,11 +10,11 @@ public final class MessageHandler
     private static final String DENY = "DENY";
 
     private static final String MOVE = "MOVE";
+
     //Player Attack
     private static final String PLAYERATTACKNAME = "PLAYERATTACKNAME";
     private static final String PLAYERATTACKDAMAGE = "PLAYERATTACKDAMAGE";
     private static final String PLAYERATTACKSPEED = "PLAYERATTACKSPEED";
-
 
     //Enemy Attack
     private static final String ENEMYATTACKNAME = "ENEMYATTACKNAME";
@@ -25,7 +25,6 @@ public final class MessageHandler
     private static final String ATTACKNAME = "ATTACKNAME";
     private static final String ATTACKDAMAGE = "ATTACKDAMAGE";
     private static final String ATTACKSPEED = "ATTACKSPEED";
-
 
     //Spell
     private static final String SPELLNAME = "SPELLNAME";
@@ -40,7 +39,7 @@ public final class MessageHandler
     //attack
     public static String isAttack(String attackName, String attackDamage, String attackSpeed)
     {
-        return UNIQUE_KEY + DELIMITER + attackName + DELIMITER + attackDamage+  DELIMITER + attackSpeed +  DELIMITER  ;
+        return UNIQUE_KEY + DELIMITER + attackName + DELIMITER + attackDamage+  DELIMITER + attackSpeed +  DELIMITER;
     }
 
     //Spell
@@ -54,7 +53,6 @@ public final class MessageHandler
     {
         return UNIQUE_KEY + DELIMITER + itemName + DELIMITER + itemVaule ;
     }
-
 
     public static String getInviteMessage()
     {
@@ -80,7 +78,7 @@ public final class MessageHandler
     {
         //System.err.println("Meow:getNameMessage");
 
-        return "$ASSIGN4TTT$NAME,,,";
+        return UNIQUE_KEY + "NAME" + DELIMITER;
     }
 
     public static boolean isMessageInvite(String text)
@@ -105,10 +103,9 @@ public final class MessageHandler
 
     public static boolean isNameMessage(String text)
     {
-
         //String tmp = text.substring(0, 19);
         //System.err.println("Meow:isNameMessage " + tmp);
-        return getNameMessage().equals(text.substring(0, 19));
+        return getNameMessage().equals(text.substring(0, 20));
     }
 
     public static boolean isGameOverMessage(String text)
@@ -185,6 +182,4 @@ public final class MessageHandler
 
         return Integer.valueOf(pieces[2]);
     }
-
-
 }
