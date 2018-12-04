@@ -19,7 +19,6 @@ public class Forest1Bear1Combat extends AppCompatActivity {
 
     Button f1B1hpButton = null,f1B1mpButton = null,
             f1B1charAttack1 = null, f1B1charAttack2 = null, f1B1charSpell1 = null,
-            f1B1charFlee = null,
             f1B1toGoToReward = null,
             f1B1toGoToFailQuest = null;
 
@@ -52,7 +51,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
         f1B1charAttack2 = findViewById(R.id.f1B1charAttack2);
         f1B1charSpell1 = findViewById(R.id.f1B1charSpell1);
 
-        f1B1charFlee = findViewById(R.id.f1B1charFlee);
+
         f1B1toGoToReward = findViewById(R.id.f1B1toGoToReward);
         f1B1toGoToFailQuest = findViewById(R.id.f1B1toGoToFailQuest);
 
@@ -190,12 +189,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             }
         });
 
-        f1B1charFlee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // run to town as a loser
-            }
-        });
+
 
         f1B1toGoToReward.setOnClickListener(new View.OnClickListener() {
             @Override

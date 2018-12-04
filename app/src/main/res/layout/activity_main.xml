@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/adventuretime" />
+
     <Button
         android:id="@+id/enterGameButton"
         android:layout_width="match_parent"

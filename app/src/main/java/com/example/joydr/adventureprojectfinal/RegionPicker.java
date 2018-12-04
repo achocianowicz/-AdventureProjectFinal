@@ -33,7 +33,7 @@ public class RegionPicker extends AppCompatActivity
         mountianButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Login.class);
+                Intent intent = new Intent(v.getContext(), MountianQuests.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
@@ -42,7 +42,7 @@ public class RegionPicker extends AppCompatActivity
         pliansButtion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Login.class);
+                Intent intent = new Intent(v.getContext(), PlainsQuest.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
@@ -51,7 +51,7 @@ public class RegionPicker extends AppCompatActivity
         swampButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Login.class);
+                Intent intent = new Intent(v.getContext(), SwampQuests.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
@@ -60,7 +60,7 @@ public class RegionPicker extends AppCompatActivity
         coastalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Login.class);
+                Intent intent = new Intent(v.getContext(), CoastQuests.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
