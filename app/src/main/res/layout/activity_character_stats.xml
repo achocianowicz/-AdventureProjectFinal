@@ -1,320 +1,439 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CharacterStats">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/charName_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Billy" />
+            android:text="Billy"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/charLevel_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Level: 1" />
+            android:text="Level: 1"
+            android:textAlignment="center"
+            android:textSize="30sp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/STR_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="STR : 0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/charCurrentEXP_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="EXP: 0" />
+            android:text="EXP: 0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/charEXPToNextLevel_CharStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="EXP To Next Level: 100" />
+            android:text="EXP TNL: "
+            android:textAlignment="center"
+            android:textSize="30sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/attack_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="Attack: 0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/STR_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/STR_CharStats" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/STR_CharStats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="STR : 0"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/attack_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Attack: 0" />
-
-                <TextView
-                    android:id="@+id/health_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Health: 0" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/INTELL_CharStats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="INTELL: 0" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/intell_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Intell: 0" />
-
-                <TextView
-                    android:id="@+id/magic_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Magic: 0" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/DEX_CharStats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DEX: 0" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/speed_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Speed: 0" />
-
-                <TextView
-                    android:id="@+id/dodge_CharStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Dodge: 0" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/addAttackButton_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="@+id/attack_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attack_CharStats" />
 
-        <Button
-            android:id="@+id/addAttackButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/addHealthButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/addIntellButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/addMagicButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/addSpeedButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/addDodgeButton_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/health_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Health: 0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/addAttackButton_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAttackButton_CharStats" />
 
-        <TextView
-            android:id="@+id/currentWeapon_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WeaponName" />
-
-        <TextView
-            android:id="@+id/currentWeaponAttack1Name_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Attack 1 Name" />
-
-        <TextView
-            android:id="@+id/currentWeaponAttack1Damage_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Damage : 10" />
-
-        <TextView
-            android:id="@+id/currentWeaponAttack1Speed_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Speed : 30" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/addHealthButton_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:orientation="horizontal">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="@+id/health_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/health_CharStats" />
 
-        <TextView
-            android:id="@+id/currentWeaponAttack2Name_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Attack 2 Name"
-            android:textAlignment="center" />
+    <TextView
+        android:id="@+id/INTELL_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:text="INTELL: 0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/STR_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/STR_CharStats"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/currentWeaponAttack2Damage_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Damage: 15"
-            android:textAlignment="center" />
+    <TextView
+        android:id="@+id/intell_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_weight="1"
+        android:text="Intell: 0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/attack_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/attack_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/attack_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/currentWeaponAttack2Speed_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Speed: 90"
-            android:textAlignment="center" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/addIntellButton_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/addAttackButton_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/addAttackButton_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/addAttackButton_CharStats"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/magic_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:text="Magic: 0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/health_CharStats"
+        app:layout_constraintEnd_toEndOf="@+id/intell_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/intell_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/health_CharStats" />
 
-        <TextView
-            android:id="@+id/hpCount_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Health potion count: " />
-
-        <TextView
-            android:id="@+id/mpCount_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Magic potion count: " />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/addMagicButton_CharStats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="@+id/magic_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/magic_CharStats"
+        app:layout_constraintTop_toBottomOf="@+id/magic_CharStats" />
 
-        <TextView
-            android:id="@+id/charSpell1Name_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Spell Name" />
+    <TextView
+        android:id="@+id/DEX_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="DEX: 0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/INTELL_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/INTELL_CharStats"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/charSpell1Damage_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Damage :" />
+    <TextView
+        android:id="@+id/speed_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_weight="1"
+        android:text="Speed: 0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/intell_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/intell_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/intell_CharStats" />
 
-        <TextView
-            android:id="@+id/charSpell1Speed_CharStats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Speed:" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/addSpeedButton_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/addIntellButton_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/addIntellButton_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/addIntellButton_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/dodge_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:text="Dodge: 0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/magic_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/speed_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/magic_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/addDodgeButton_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="@+id/dodge_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/dodge_CharStats"
+        app:layout_constraintTop_toBottomOf="@+id/dodge_CharStats" />
+
+    <TextView
+        android:id="@+id/currentWeapon_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="WeaponName"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack1Name_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Attack 1 Name"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintEnd_toStartOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/currentWeaponAttack1Damage_CharStats" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack1Damage_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="Damage : 10"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/currentWeapon_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/currentWeapon_CharStats"
+        app:layout_constraintTop_toBottomOf="@+id/currentWeapon_CharStats" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack1Speed_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Speed : 30"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack2Name_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Attack 2 Name"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/currentWeaponAttack1Name_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentWeaponAttack1Name_CharStats" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack2Damage_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Damage: 15"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentWeaponAttack2Name_CharStats"
+        app:layout_constraintEnd_toEndOf="@+id/currentWeaponAttack1Damage_CharStats"
+        app:layout_constraintStart_toEndOf="@+id/currentWeaponAttack2Name_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/currentWeaponAttack2Name_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentWeaponAttack2Speed_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Speed: 90"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentWeaponAttack2Damage_CharStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/currentWeaponAttack2Damage_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/currentWeaponAttack2Damage_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/charSpell1Name_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Spell Name"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/charSpell1Damage_CharStats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentWeaponAttack2Name_CharStats" />
+
+    <TextView
+        android:id="@+id/charSpell1Damage_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Damage : 0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/charSpell1Name_CharStats"
+        app:layout_constraintEnd_toEndOf="@+id/currentWeaponAttack2Damage_CharStats"
+        app:layout_constraintStart_toStartOf="@+id/currentWeaponAttack2Damage_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/charSpell1Name_CharStats" />
+
+    <TextView
+        android:id="@+id/charSpell1Speed_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Speed:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/charSpell1Damage_CharStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/charSpell1Damage_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/charSpell1Damage_CharStats"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/hpCount_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="28dp"
+        android:layout_weight="1"
+        android:text="Health potion count: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charSpell1Name_CharStats" />
+
+    <TextView
+        android:id="@+id/mpCount_CharStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Magic potion count: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hpCount_CharStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/hpCount_CharStats"
+        app:layout_constraintTop_toTopOf="@+id/hpCount_CharStats"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>

@@ -118,7 +118,7 @@ public class Mountian1FindTheChest extends AppCompatActivity {
             public void onClick(View v) {
                 Singleton.getInstance().setExpReward(expReward);
                 Singleton.getInstance().setGoldReward(goldReward);
-                Singleton.getInstance().setMountianQuest1Done(true);
+                Singleton.getInstance().setMountianQuest2Done(true);
                 Intent intent = new Intent(v.getContext(), QuestReward.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);

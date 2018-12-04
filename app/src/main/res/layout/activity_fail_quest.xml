@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/fexpReward"
-        android:layout_width="131dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
@@ -35,16 +35,13 @@
 
     <TextView
         android:id="@+id/fgoldReward"
-        android:layout_width="134dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
         android:text="Gold"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fexpReward"
+        app:layout_constraintStart_toStartOf="@+id/fexpReward"
         app:layout_constraintTop_toBottomOf="@+id/fexpReward" />
 
     <Button
@@ -56,6 +53,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Button To Town"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +62,8 @@
 
     <TextView
         android:id="@+id/fLevelUpTextBox"
-        android:layout_width="151dp"
-        android:layout_height="71dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"

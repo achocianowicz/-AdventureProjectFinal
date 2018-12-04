@@ -89,12 +89,12 @@ public class CharacterStats extends AppCompatActivity {
         dodge_CharStats.setText("Dodge: " + Singleton.getInstance().getCharDodge());
 //weapon
         currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
-        currentWeaponAttack1Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack1().getName());
-        currentWeaponAttack1Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack1().getDamage());
-        currentWeaponAttack1Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack1().getSpeed());
-        currentWeaponAttack2Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack2().getName());
-        currentWeaponAttack2Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack2().getDamage());
-        currentWeaponAttack2Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack2().getSpeed());
+        currentWeaponAttack1Name_CharStats.setText( "" + Singleton.getInstance().getCharAttack1().getName());
+        currentWeaponAttack1Damage_CharStats.setText( "Damage: " + Singleton.getInstance().getCharAttack1().getDamage());
+        currentWeaponAttack1Speed_CharStats.setText( "Speed: " + Singleton.getInstance().getCharAttack1().getSpeed());
+        currentWeaponAttack2Name_CharStats.setText( "" + Singleton.getInstance().getCharAttack2().getName());
+        currentWeaponAttack2Damage_CharStats.setText( "Damage: " + Singleton.getInstance().getCharAttack2().getDamage());
+        currentWeaponAttack2Speed_CharStats.setText( "Speed:" + Singleton.getInstance().getCharAttack2().getSpeed());
 
         // spell
 
@@ -254,12 +254,12 @@ public class CharacterStats extends AppCompatActivity {
         currentWeapon_CharStats = findViewById(R.id.currentWeapon_CharStats);
 
         currentWeapon_CharStats.setText( "Equiped with " + Singleton.getInstance().getCharWeaponName());
-        currentWeaponAttack1Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack1().getName());
-        currentWeaponAttack1Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack1().getDamage());
-        currentWeaponAttack1Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack1().getSpeed());
-        currentWeaponAttack2Name_CharStats.setText( "Attack Value: " + Singleton.getInstance().getCharAttack2().getName());
-        currentWeaponAttack2Damage_CharStats.setText( "Damage Value " + Singleton.getInstance().getCharAttack2().getDamage());
-        currentWeaponAttack2Speed_CharStats.setText( "Speed Value " + Singleton.getInstance().getCharAttack2().getSpeed());
+        currentWeaponAttack1Name_CharStats.setText( "" + Singleton.getInstance().getCharAttack1().getName());
+        currentWeaponAttack1Damage_CharStats.setText( "Damage: " + Singleton.getInstance().getCharAttack1().getDamage());
+        currentWeaponAttack1Speed_CharStats.setText( "Speed: " + Singleton.getInstance().getCharAttack1().getSpeed());
+        currentWeaponAttack2Name_CharStats.setText( "" + Singleton.getInstance().getCharAttack2().getName());
+        currentWeaponAttack2Damage_CharStats.setText( "Damage: " + Singleton.getInstance().getCharAttack2().getDamage());
+        currentWeaponAttack2Speed_CharStats.setText( "Speed: " + Singleton.getInstance().getCharAttack2().getSpeed());
         hpCount_CharStats.setText("Health potion count: " + Singleton.getInstance().getHpCount());
         mpCount_CharStats.setText("Magic potion count: " + Singleton.getInstance().getMpCount());
 
