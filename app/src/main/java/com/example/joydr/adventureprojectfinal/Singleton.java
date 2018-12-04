@@ -39,7 +39,11 @@ public class Singleton {
         private String dayCount = null;
 
         // Quest log
-        private boolean forestQuest1Done = false,forestQuest2Done = false;
+        private boolean forestQuest1Done = false,forestQuest2Done = false,
+                mountianQuest1Done = false,mountianQuest2Done = false,
+                plainsQuest1Done = false,plainsQuest2Done = false,
+                swampQuest1Done = false,swampQuest2Done = false,
+                coastQuest1Done = false,coastQuest2Done = false;
 
         //Shop
                 // Weapons and potion
@@ -67,7 +71,9 @@ public class Singleton {
         // Does Char go up level?
 
         private int expM = 2, expToNextLevel = 100;
-
+        // offline HP and MP
+    private String charOldHP, charOldMP;
+    private double enemyOnlineHP, enemyOnlineMP;
         //Forest 1 bear 1 combat
         private String enemyName = "Bear";
         private double enemyHP = 50, enemyBaseHP= 50, enemyMP = 0;
@@ -679,11 +685,109 @@ public class Singleton {
         this.forestQuest2Done = forestQuest2Done;
     }
 
+    public boolean isMountianQuest1Done() {
+        return mountianQuest1Done;
+    }
+
+    public void setMountianQuest1Done(boolean mountianQuest1Done) {
+        this.mountianQuest1Done = mountianQuest1Done;
+    }
+
+    public boolean isMountianQuest2Done() {
+        return mountianQuest2Done;
+    }
+
+    public void setMountianQuest2Done(boolean mountianQuest2Done) {
+        this.mountianQuest2Done = mountianQuest2Done;
+    }
+
+    public boolean isPlainsQuest1Done() {
+        return plainsQuest1Done;
+    }
+
+    public void setPlainsQuest1Done(boolean plainsQuest1Done) {
+        this.plainsQuest1Done = plainsQuest1Done;
+    }
+
+    public boolean isPlainsQuest2Done() {
+        return plainsQuest2Done;
+    }
+
+    public void setPlainsQuest2Done(boolean plainsQuest2Done) {
+        this.plainsQuest2Done = plainsQuest2Done;
+    }
+
+    public boolean isSwampQuest1Done() {
+        return swampQuest1Done;
+    }
+
+    public void setSwampQuest1Done(boolean swampQuest1Done) {
+        this.swampQuest1Done = swampQuest1Done;
+    }
+
+    public boolean isSwampQuest2Done() {
+        return swampQuest2Done;
+    }
+
+    public void setSwampQuest2Done(boolean swampQuest2Done) {
+        this.swampQuest2Done = swampQuest2Done;
+    }
+
+    public boolean isCoastQuest1Done() {
+        return coastQuest1Done;
+    }
+
+    public void setCoastQuest1Done(boolean coastQuest1Done) {
+        this.coastQuest1Done = coastQuest1Done;
+    }
+
+    public boolean isCoastQuest2Done() {
+        return coastQuest2Done;
+    }
+
+    public void setCoastQuest2Done(boolean coastQuest2Done) {
+        this.coastQuest2Done = coastQuest2Done;
+    }
+
     public String getSavedCharName() {
         return savedCharName;
     }
 
     public void setSavedCharName(String savedCharName) {
         this.savedCharName = savedCharName;
+    }
+
+    // offline
+
+    public String getCharOldHP() {
+        return charOldHP;
+    }
+
+    public void setCharOldHP(String charOldHP) {
+        this.charOldHP = charOldHP;
+    }
+
+    public String getCharOldMP() {
+        return charOldMP;
+    }
+
+    public void setCharOldMP(String charOldMP) {
+        this.charOldMP = charOldMP;
+    }
+
+    public double getEnemyOnlineHP() {
+        return enemyOnlineHP;
+    }
+
+    public void setEnemyOnlineHP(double enemyOnlineHP) {
+        this.enemyOnlineHP = enemyOnlineHP;
+    }
+
+    public double getEnemyOnlineMP() {
+        return enemyOnlineMP;
+    }
+
+    public void setEnemyOnlineMP(double enemyOnlineMP) {
+        this.enemyOnlineMP = enemyOnlineMP;
     }
 }

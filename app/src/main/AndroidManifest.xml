@@ -37,7 +37,15 @@
         <activity android:name=".Chemist" />
         <activity android:name=".Bank" />
         <activity android:name=".FailQuest" />
-        <activity android:name=".CombatReport"></activity>
+        <activity android:name=".CombatReport" />
+        <activity android:name=".MountianQuests" />
+        <activity android:name=".PlainsQuest" />
+        <activity android:name=".SwampQuests" />
+        <activity android:name=".CoastQuests" />
+        <activity android:name=".Mountian1FindTheChest" />
+        <activity android:name=".Plains1FindTheChest" />
+        <activity android:name=".Swamp1FindTheChest" />
+        <activity android:name=".Coast1FindTheChest"></activity>
     </application>
 
 </manifest>
