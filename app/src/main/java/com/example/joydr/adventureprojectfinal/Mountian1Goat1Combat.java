@@ -231,7 +231,7 @@ public class Mountian1Goat1Combat extends AppCompatActivity {
             //Char is dead
 
 
-            Singleton.getInstance().setQuestTitle("Forest1 Bear1 Combat");
+            Singleton.getInstance().setQuestTitle("Mountian 1 Goat 1 Combat");
             Singleton.getInstance().setExpReward(0);
             Singleton.getInstance().setGoldReward(0);
 
