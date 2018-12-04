@@ -24,7 +24,7 @@ public class SwampQuests extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), Forest1Bear1Combat.class);
+                Intent intent = new Intent(v.getContext(), Swamp1Skeleton1Combat.class);
                 Singleton.getInstance().setQuestTitle("Swamp 1 Skeleton 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);

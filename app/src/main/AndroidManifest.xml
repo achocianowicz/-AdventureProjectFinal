@@ -45,7 +45,11 @@
         <activity android:name=".Mountian1FindTheChest" />
         <activity android:name=".Plains1FindTheChest" />
         <activity android:name=".Swamp1FindTheChest" />
-        <activity android:name=".Coast1FindTheChest"></activity>
+        <activity android:name=".Coast1FindTheChest" />
+        <activity android:name=".Mountian1Goat1Combat" />
+        <activity android:name=".Plains1Loin1Combat" />
+        <activity android:name=".Swamp1Skeleton1Combat" />
+        <activity android:name=".Coast1Crab1Combat"></activity>
     </application>
 
 </manifest>
