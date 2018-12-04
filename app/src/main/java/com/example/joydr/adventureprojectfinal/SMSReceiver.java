@@ -8,16 +8,20 @@ import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 
-public class SMSReceiver extends BroadcastReceiver {
+public class SMSReceiver extends BroadcastReceiver
+{
     GameLobby activity = null;
     final IntentFilter intentFilter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
-    public SMSReceiver(Context context) {
+
+    public SMSReceiver(Context context)
+    {
         activity = (GameLobby) context;
         context.registerReceiver(this, intentFilter);
     }
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(Context context, Intent intent)
+    {
         Bundle bundle = intent.getExtras();
         SmsMessage currentMessage = null;
 
@@ -25,12 +29,15 @@ public class SMSReceiver extends BroadcastReceiver {
         {
             final Object[] pdusObj = (Object[]) bundle.get("pdus");
 
-            for (int i = 0; i < pdusObj.length; i++) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            for (int i = 0; i < pdusObj.length; i++)
+            {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                {
                     String format = bundle.getString("format");
                     currentMessage = SmsMessage.createFromPdu((byte[]) pdusObj[i], format);
                 }
-                else {
+                else
+                {
                     currentMessage = SmsMessage.createFromPdu((byte[]) pdusObj[i]);
                 }
             }
