@@ -81,6 +81,7 @@ public class Singleton {
         Attack bear1Attack2 = new Attack("Bite", 30, 90);
         private int forest1Bear1GoldReward = 100, forest1Bear1EXPReward = 100, bearLevel = 1;
         Bear bear1 = new Bear();
+        //Animal crab = Animal("Crab",30, 0,bear1Attack1,bear1Attack2,Attack);
 
 
         // private constructor restricted to this class itself

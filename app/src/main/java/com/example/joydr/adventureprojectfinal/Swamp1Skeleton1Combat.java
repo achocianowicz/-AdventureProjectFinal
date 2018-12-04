@@ -59,8 +59,8 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
 
         b1F1battleText = findViewById(R.id.s1S1battleText);
 // Enemy
-        f1B1enemyName.setText(Singleton.getInstance().bear1.getEnemyName());
-        f1B1enemyLevel.setText("Level: " +Singleton.getInstance().bear1.getBearLevel());
+        f1B1enemyName.setText("Skeleton");
+        f1B1enemyLevel.setText("Level: " +1);
         f1B1enemyHP.setText("HP: " + String.valueOf(Singleton.getInstance().bear1.getEnemyHP()));
         f1B1enemyMP.setText("MP: " + String.valueOf(Singleton.getInstance().bear1.getEnemyMP()));
         // bear attack
@@ -91,7 +91,7 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
                 int numberOfHP = Integer.parseInt(Singleton.getInstance().getHpCount());
 
                 if(numberOfHP > 0){
-                    int cCHP =  Integer.parseInt(Singleton.getInstance().getCharCurrentHP());
+                    double cCHP =  Double.parseDouble(Singleton.getInstance().getCharCurrentHP());
                     cCHP += 25;
                     String setCharHP = String.valueOf(cCHP);
                     Singleton.getInstance().setCharCurrentHP(setCharHP);
@@ -198,6 +198,7 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuestReward.class);
                 Singleton.getInstance().setSwampQuest1Done(true);
+                Singleton.getInstance().setEnemyHP(Singleton.getInstance().getEnemyBaseHP());
                 //send exp and gold
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
@@ -226,6 +227,22 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
             // char is alive battle
             return;
         }
+        else if(cHP <= 0 && Singleton.getInstance().getEnemyHP() <= 0){
+            //enemy is  dead and char dead
+            Singleton.getInstance().setQuestTitle("Swamp 1 Skeleton 1 Combat");
+            Singleton.getInstance().setExpReward(0);
+            Singleton.getInstance().setGoldReward(0);
+            f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+            f1B1enemyImage.setImageResource(R.drawable.dead);
+            f1B1charImage.setImageResource(R.drawable.dead);
+            f1B1toGoToReward.setVisibility(View.INVISIBLE);
+            f1B1charAttack1.setVisibility(View.INVISIBLE);
+            f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+            f1B1hpButton.setVisibility(View.INVISIBLE);
+            f1B1mpButton.setVisibility(View.INVISIBLE);
+
+        }
         else{
             f1B1charImage.setImageResource(R.drawable.dead);
             //Char is dead
@@ -251,6 +268,22 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
             // enemy is alive battle
             return;
         }
+        else if(cHP <= 0 && Double.parseDouble(Singleton.getInstance().getCharCurrentHP()) <= 0){
+            //enemy is  dead and char dead
+            Singleton.getInstance().setQuestTitle("Swamp1 Skeleton 1 Combat");
+            Singleton.getInstance().setExpReward(0);
+            Singleton.getInstance().setGoldReward(0);
+            f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+            f1B1enemyImage.setImageResource(R.drawable.dead);
+            f1B1charImage.setImageResource(R.drawable.dead);
+            f1B1toGoToReward.setVisibility(View.INVISIBLE);
+            f1B1charAttack1.setVisibility(View.INVISIBLE);
+            f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+            f1B1hpButton.setVisibility(View.INVISIBLE);
+            f1B1mpButton.setVisibility(View.INVISIBLE);
+
+        }
         else{
 
             //enemy dead is dead
@@ -270,8 +303,8 @@ public class Swamp1Skeleton1Combat extends AppCompatActivity {
     }
 
     public void Combat(Attack charAttack) {
-        Attack bear1Attack1 = Singleton.getInstance().bear1Attack1;
-        Attack bear2Attack2 = Singleton.getInstance().bear1Attack2;
+        Attack bear1Attack1 = new Attack ("Stab" , 30, 50);
+        Attack bear2Attack2 = new Attack ("Swipe" , 40, 90);
 
         int random = new Random().nextInt(2) + 1;
         String point = "1";

@@ -25,7 +25,7 @@ public class PlainsQuest extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), Plains1Loin1Combat.class);
-                Singleton.getInstance().setQuestTitle("Plains 1 Loin 1");
+                Singleton.getInstance().setQuestTitle("Plains 1 Lion 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
 
