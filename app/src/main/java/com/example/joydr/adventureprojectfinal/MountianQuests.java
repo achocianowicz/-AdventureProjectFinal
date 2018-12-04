@@ -23,7 +23,7 @@ public class MountianQuests extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), Forest1Bear1Combat.class);
+                Intent intent = new Intent(v.getContext(), Mountian1Goat1Combat.class);
                 Singleton.getInstance().setQuestTitle("Mountian 1 Goat 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);

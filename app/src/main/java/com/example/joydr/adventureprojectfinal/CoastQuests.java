@@ -24,7 +24,7 @@ public class CoastQuests extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), Forest1Bear1Combat.class);
+                Intent intent = new Intent(v.getContext(), Coast1Crab1Combat.class);
                 Singleton.getInstance().setQuestTitle("Coast 1 Crab 1");
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
