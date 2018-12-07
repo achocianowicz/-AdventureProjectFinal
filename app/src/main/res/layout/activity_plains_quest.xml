@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlainsQuest">
+
     <Button
         android:id="@+id/plainsQuest1Button"
         android:layout_width="wrap_content"
@@ -13,6 +14,7 @@
         android:layout_marginEnd="16dp"
         android:background="@android:color/holo_green_light"
         android:text="Accept"
+        app:layout_constraintBottom_toBottomOf="@+id/ForestQuest1Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,13 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Fight Level 1 Loin"
+        android:text="Fight Level 1 Lion"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/forestQuest1Button"
         app:layout_constraintEnd_toStartOf="@+id/forestQuest1Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/forestQuest1Button" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ForestQuest2Text"

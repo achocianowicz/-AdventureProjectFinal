@@ -89,7 +89,7 @@ public class Forest1Bear1Combat extends AppCompatActivity {
                 int numberOfHP = Integer.parseInt(Singleton.getInstance().getHpCount());
 
                 if(numberOfHP > 0){
-                   int cCHP =  Integer.parseInt(Singleton.getInstance().getCharCurrentHP());
+                   double cCHP =  Double.parseDouble(Singleton.getInstance().getCharCurrentHP());
                     cCHP += 25;
                     String setCharHP = String.valueOf(cCHP);
                     Singleton.getInstance().setCharCurrentHP(setCharHP);
@@ -219,27 +219,43 @@ public class Forest1Bear1Combat extends AppCompatActivity {
     }
 
     public void CheckCharHealth(Double cHP){
-      if(cHP > 0){
+        if(cHP > 0){
 
-          // char is alive battle
-          return;
-      }
-      else{
-          f1B1charImage.setImageResource(R.drawable.dead);
-          //Char is dead
+            // char is alive battle
+            return;
+        }
+        else if(cHP <= 0 && Singleton.getInstance().getEnemyHP() <= 0){
+            //enemy is  dead and char dead
+            Singleton.getInstance().setQuestTitle("Forest 1 Bear 1 Combat");
+            Singleton.getInstance().setExpReward(0);
+            Singleton.getInstance().setGoldReward(0);
+            f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+            f1B1enemyImage.setImageResource(R.drawable.dead);
+            f1B1charImage.setImageResource(R.drawable.dead);
+            f1B1toGoToReward.setVisibility(View.INVISIBLE);
+            f1B1charAttack1.setVisibility(View.INVISIBLE);
+            f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+            f1B1hpButton.setVisibility(View.INVISIBLE);
+            f1B1mpButton.setVisibility(View.INVISIBLE);
+
+        }
+        else{
+            f1B1charImage.setImageResource(R.drawable.dead);
+            //Char is dead
 
 
-          Singleton.getInstance().setQuestTitle("Forest1 Bear1 Combat");
-          Singleton.getInstance().setExpReward(0);
-          Singleton.getInstance().setGoldReward(0);
+            Singleton.getInstance().setQuestTitle("Forest 1 Bear 1 Combat");
+            Singleton.getInstance().setExpReward(0);
+            Singleton.getInstance().setGoldReward(0);
 
-          f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
-          f1B1charAttack1.setVisibility(View.INVISIBLE);
-          f1B1charAttack2.setVisibility(View.INVISIBLE);
-          f1B1charSpell1.setVisibility(View.INVISIBLE);
-          f1B1hpButton.setVisibility(View.INVISIBLE);
-          f1B1mpButton.setVisibility(View.INVISIBLE);
-      }
+            f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+            f1B1charAttack1.setVisibility(View.INVISIBLE);
+            f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+            f1B1hpButton.setVisibility(View.INVISIBLE);
+            f1B1mpButton.setVisibility(View.INVISIBLE);
+        }
 
     }
 
@@ -249,10 +265,26 @@ public class Forest1Bear1Combat extends AppCompatActivity {
             // enemy is alive battle
             return;
         }
+        else if(cHP <= 0 && Double.parseDouble(Singleton.getInstance().getCharCurrentHP()) <= 0){
+            //enemy is  dead and char dead
+            Singleton.getInstance().setQuestTitle("Forest 1 Bear 1 Combat");
+            Singleton.getInstance().setExpReward(0);
+            Singleton.getInstance().setGoldReward(0);
+            f1B1toGoToFailQuest.setVisibility(View.VISIBLE);
+            f1B1enemyImage.setImageResource(R.drawable.dead);
+            f1B1charImage.setImageResource(R.drawable.dead);
+            f1B1toGoToReward.setVisibility(View.INVISIBLE);
+            f1B1charAttack1.setVisibility(View.INVISIBLE);
+            f1B1charAttack2.setVisibility(View.INVISIBLE);
+            f1B1charSpell1.setVisibility(View.INVISIBLE);
+            f1B1hpButton.setVisibility(View.INVISIBLE);
+            f1B1mpButton.setVisibility(View.INVISIBLE);
+
+        }
         else{
 
             //enemy dead is dead
-            Singleton.getInstance().setQuestTitle("Forest1 Bear1 Combat");
+            Singleton.getInstance().setQuestTitle("Forest 1 Bear 1 Combat");
             Singleton.getInstance().setExpReward(Singleton.getInstance().getForest1Bear1EXPReward());
             Singleton.getInstance().setGoldReward(Singleton.getInstance().getForest1Bear1GoldReward());
             f1B1enemyImage.setImageResource(R.drawable.win);
